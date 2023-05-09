@@ -94,7 +94,12 @@ public class Monitoring : MonoBehaviour
         SDT_data.SDT_Character = Character;
         SDT_data.SDT_Distance = distance;
 
-        string directory = Application.dataPath + "/MonitoringData/";
+#if UNITY_ANDROID
+        string directory = Application.persistentDataPath + "/MonitoringData/";
+#else
+                string directory = Application.dataPath + "/MonitoringData/";
+
+#endif
         string name = SettingsBase.GetGender().ToString() + SettingsBase.GetSubjectID().ToString() + ".json";
         writeDataToJson(directory, name, SDT_data);
     }

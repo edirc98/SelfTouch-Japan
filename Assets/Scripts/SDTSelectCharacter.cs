@@ -11,7 +11,7 @@ public class SDTSelectCharacter : QuickStageBase
     public GameObject FemaleAvatar;
 
     public GameObject SelectedCharacter;
-    
+    public GameObject SDT_Instructions;
     
     [SerializeField]
     private int TimesEnt = 0;
@@ -29,32 +29,38 @@ public class SDTSelectCharacter : QuickStageBase
 
     protected override void Start()
     {
+        
         base.Start();
     }
 
     protected override IEnumerator CoUpdate()
     {
+        if (SDT_Instructions.activeSelf == false)
+        {
+            SDT_Instructions.SetActive(true);
+        }
+
         while (!validSelected)
         {
            selected = Random.Range(1, 5); //Max Excluisve
-           if((selected == 1) && (TimesEnt < 3) && (lastSelected != 1))
+           if((selected == 1) && (TimesEnt < 3))// && (lastSelected != 1))
            {
-                lastSelected = 1;
+                //lastSelected = 1;
                 validSelected = true;
            }
-           if ((selected == 2) && (TimesRobot < 3) && (lastSelected != 2))
+           if ((selected == 2) && (TimesRobot < 3))// && (lastSelected != 2))
            {
-               lastSelected = 2;
+               //lastSelected = 2;
                validSelected = true;
            }
-           if ((selected == 3) && (TimesMale < 3) && (lastSelected != 3))
+           if ((selected == 3) && (TimesMale < 3))// && (lastSelected != 3))
            {
-               lastSelected = 3;
+               //lastSelected = 3;
                validSelected = true;
            }
-            if ((selected == 4) && (TimesFemale < 3) && (lastSelected != 4))
+            if ((selected == 4) && (TimesFemale < 3))// && (lastSelected != 4))
             {
-                lastSelected = 4;
+                //lastSelected = 4;
                 validSelected = true;
             }
         }
