@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.quickvr.quickbase": {
-      "version": "https://github.com/eventlab-projects/com.quickvr.quickbase.git",
+      "version": "https://gitlab.com/eventlabprojects/quickvr.packages/com.quickvr.quickbase.git",
       "depth": 0,
       "source": "git",
       "dependencies": {
@@ -10,7 +10,7 @@
         "com.unity.addressables": "1.18.19",
         "com.unity.textmeshpro": "3.0.6"
       },
-      "hash": "d1789c85792e3ee01329f02e9cbb671ef4340dfa"
+      "hash": "ed7bfa95de88cf45876d20c17cc731c8a233b74a"
     },
     "com.unity.addressables": {
       "version": "1.19.19",

@@ -19,7 +19,7 @@ MonoBehaviour:
     _visibleInMenu: 1
     _order: 0
   - _key: Gender
-    _value: Female
+    _value: Male
     _type: SettingsBase+Genders, QuickBase, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     _visibleInMenu: 1
     _order: 0

@@ -5,8 +5,10 @@ using QuickVR;
 
 public class WaitInput : QuickStageBase
 {
+    public bool EndWalk = false;
     public string ButtonString;
     public SDTSelectCharacter CharacterSelection;
+    
     protected override void Start()
     {
         base.Start();
@@ -16,9 +18,13 @@ public class WaitInput : QuickStageBase
         while (!InputManager.GetButtonDown(ButtonString)) yield return null;
 
 
-        Animator selectedCharacterAnimator = CharacterSelection.SelectedCharacter.GetComponent<Animator>();
-        selectedCharacterAnimator.SetTrigger("EndWalk");
-        yield return new WaitForSeconds(3.0f);
+        if (EndWalk)
+        {
+            Animator selectedCharacterAnimator = CharacterSelection.SelectedCharacter.GetComponent<Animator>();
+            selectedCharacterAnimator.SetTrigger("EndWalk");
+            yield return new WaitForSeconds(3.0f);
+        }
+        
 
     }
 
