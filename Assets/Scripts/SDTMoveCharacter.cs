@@ -5,19 +5,25 @@ using QuickVR;
 
 public class SDTMoveCharacter : QuickStageBase
 {
-    public SDTSelectCharacter CharacterSelection;
+
+    public GameObject WalkButton;
+    public GameObject ConfirmButton;
+
+    public bool DistanceConfirmed;
     protected override void Start()
     {
         base.Start();
     }
     protected override IEnumerator CoUpdate()
     {
-        Animator selectedCharacterAnimator = CharacterSelection.SelectedCharacter.GetComponent<Animator>();
+        WalkButton.SetActive(true);
+        ConfirmButton.SetActive(true);
         //CharacterSelection.SelectedCharacter.SetActive(true);
+        while (!DistanceConfirmed) yield return null;
 
-        yield return new WaitForSeconds(2.0f);
-        selectedCharacterAnimator.SetTrigger("StartWalk");
-        base.CoUpdate();
+        WalkButton.SetActive(false);
+        ConfirmButton.SetActive(false);
+        base.Finish();
     }
 
 
