@@ -11,6 +11,7 @@ public class SDTSelectCharacter : QuickStageBase
     public GameObject FemaleAvatar;
 
     public GameObject SelectedCharacter;
+    public Animator SelectedCharacterAnimator;
     public GameObject SDT_Instructions;
     
     [SerializeField]
@@ -90,6 +91,7 @@ public class SDTSelectCharacter : QuickStageBase
             }
             validSelected = false;
         }
+        SelectedCharacterAnimator = SelectedCharacter.GetComponent<Animator>();
         SelectedCharacter.SetActive(true);
         return base.CoUpdate();
     }

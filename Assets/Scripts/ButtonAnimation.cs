@@ -52,6 +52,7 @@ public class ButtonAnimation : MonoBehaviour
                 else if (ConfirmButton)
                 {
                     Debug.Log("CONFIRM Distance");
+                    moveCharacter.ConfirmDistance();
                     //TODO
                 }
 
