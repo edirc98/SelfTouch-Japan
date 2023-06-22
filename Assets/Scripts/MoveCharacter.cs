@@ -32,14 +32,12 @@ public class MoveCharacter : MonoBehaviour
     {
         isMoving = true;
         CharacterSelection.SelectedCharacterAnimator.SetTrigger("StartWalk");
-        //StartCoroutine(Lerp());
     }
 
     public void StopCharacter()
     {
         isMoving = false;
         CharacterSelection.SelectedCharacterAnimator.SetTrigger("EndWalk");
-        //StopCoroutine(Lerp());
     }
 
     public void ConfirmDistance()
@@ -47,17 +45,4 @@ public class MoveCharacter : MonoBehaviour
         moveCharacter.Finish();
         selectedCharacterAnimator = null;
     }
-
-    //IEnumerator Lerp()
-    //{
-    //    float timeElapsed = 0;
-    //    Vector3 startPosition = CharacterSelection.SelectedCharacter.transform.position;
-    //    while (timeElapsed < lerpDuration)
-    //    {
-    //        CharacterSelection.SelectedCharacter.transform.position = Vector3.Lerp(startPosition, lerpEndPose.position, timeElapsed / lerpDuration);
-    //        timeElapsed += Time.deltaTime;
-    //        yield return null;
-    //    }
-    //    CharacterSelection.SelectedCharacter.transform.position = lerpEndPose.position;
-    //}
 }

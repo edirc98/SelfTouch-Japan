@@ -12,7 +12,6 @@ public class SDTSelectCharacter : QuickStageBase
 
     public GameObject SelectedCharacter;
     public Animator SelectedCharacterAnimator;
-    public GameObject SDT_Instructions;
     
     [SerializeField]
     private int TimesEnt = 0;
@@ -36,11 +35,6 @@ public class SDTSelectCharacter : QuickStageBase
 
     protected override IEnumerator CoUpdate()
     {
-        if (SDT_Instructions.activeSelf == false)
-        {
-            SDT_Instructions.SetActive(true);
-        }
-
         while (!validSelected)
         {
            selected = Random.Range(1, 5); //Max Excluisve
