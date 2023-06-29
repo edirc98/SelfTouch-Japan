@@ -23,11 +23,19 @@ public class SDT_Data
     public int SDT_Iteration;
 
 }
+[System.Serializable]
+public class Question_Data
+{
+    public string QuestionString;
+    public int Response;
+
+}
 public class Monitoring : MonoBehaviour
 {
     
     public MonitoringData data = new MonitoringData();
     public SDT_Data SDT_data = new SDT_Data();
+    public Question_Data question_data = new Question_Data();
 
     // Start is called before the first frame update
     public void setInitialTime(string stage)
@@ -81,6 +89,24 @@ public class Monitoring : MonoBehaviour
         File.AppendAllText(directory + name, "\n");
     }
 
+    public void writeDataToJson(string directory, string name, Question_Data data)
+    {
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+        string outputData = JsonUtility.ToJson(data);
+        if (!File.Exists(directory + name))
+        {
+            File.WriteAllText(directory + name, outputData);
+        }
+        else
+        {
+            File.AppendAllText(directory + name, outputData);
+        }
+        File.AppendAllText(directory + name, "\n");
+    }
+
     public void SaveData(string stage)
     {
         setInitialTime(stage);
@@ -102,5 +128,20 @@ public class Monitoring : MonoBehaviour
 #endif
         string name = SettingsBase.GetGender().ToString() + SettingsBase.GetSubjectID().ToString() + ".json";
         writeDataToJson(directory, name, SDT_data);
+    }
+
+    public void SaveQuestionData(string questionString, int response)
+    {
+        question_data.QuestionString = questionString;
+        question_data.Response = response; 
+
+#if UNITY_ANDROID
+        string directory = Application.persistentDataPath + "/MonitoringData/";
+#else
+                string directory = Application.dataPath + "/MonitoringData/";
+
+#endif
+        string name = "Responses " + SettingsBase.GetGender().ToString() + SettingsBase.GetSubjectID().ToString() + ".json";
+        writeDataToJson(directory, name, question_data);
     }
 }
