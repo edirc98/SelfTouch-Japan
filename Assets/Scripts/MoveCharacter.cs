@@ -10,24 +10,6 @@ public class MoveCharacter : MonoBehaviour
 
     public bool isMoving = false;
 
-    [Header("Lerp Params")]
-    public float lerpDuration;
-    public Transform lerpEndPose;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     public void MoveCharacterForward()
     {
         isMoving = true;
