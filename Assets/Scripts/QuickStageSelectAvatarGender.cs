@@ -8,13 +8,10 @@ public class QuickStageSelectAvatarGender : QuickStageBase
     [Header("Avatar Source Animator")]
     public Animator MasterAvatarAnimator;
     [Header("Target Avatars Animators")]
-    public Animator HumanAvatar;
-    public Animator RobotAvatar;
-    public Animator TreeentAvatar;
+    public Animator MaleAvatarAnimator;
+    public Animator FemaleAvatarAnimator;
 
-    [Header("Loop & Conditions")]
-    public QuickStageLoop MainLoop;
-    public StageSetConditionsOrder Conditions; 
+
     private QuickVRManager _vrManager
     {
         get
@@ -24,21 +21,21 @@ public class QuickStageSelectAvatarGender : QuickStageBase
     }
     protected override IEnumerator CoUpdate()
     {
-        int currentIteration = MainLoop.GetCurrentInteration();
-        if (Conditions.CurrentConditions[currentIteration].AvatarBodyType == Condition.BodyType.Human)
+        if (SettingsBase.GetGender() == SettingsBase.Genders.Male)
         {
-            _vrManager.SetAnimatorTarget(HumanAvatar);
+            if (MaleAvatarAnimator.gameObject.activeSelf == false) MaleAvatarAnimator.gameObject.SetActive(true);
+            _vrManager.SetAnimatorTarget(MaleAvatarAnimator);
+            FemaleAvatarAnimator.gameObject.SetActive(false);
+            Debug.Log("MALE selected as Target Avatar");
         }
-        else if (Conditions.CurrentConditions[currentIteration].AvatarBodyType == Condition.BodyType.Treent)
+        else
         {
-            _vrManager.SetAnimatorTarget(TreeentAvatar);
+            if (FemaleAvatarAnimator.gameObject.activeSelf == false) FemaleAvatarAnimator.gameObject.SetActive(true);
+            _vrManager.SetAnimatorTarget(FemaleAvatarAnimator);
+            MaleAvatarAnimator.gameObject.SetActive(false);
+            Debug.Log("FEMALE selected as Target Avatar");
+        }
 
-        }
-        else if (Conditions.CurrentConditions[currentIteration].AvatarBodyType == Condition.BodyType.Robot)
-        {
-            _vrManager.SetAnimatorTarget(RobotAvatar);
-
-        }
         return base.CoUpdate();
     }
 }

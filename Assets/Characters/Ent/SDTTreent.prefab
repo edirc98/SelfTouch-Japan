@@ -1529,7 +1529,7 @@ GameObject:
   - component: {fileID: 3750238721193222772}
   - component: {fileID: 4557738015833946319}
   m_Layer: 0
-  m_Name: EntAvatar
+  m_Name: SDTTreent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

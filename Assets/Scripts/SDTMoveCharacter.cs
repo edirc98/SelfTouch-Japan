@@ -21,8 +21,8 @@ public class SDTMoveCharacter : QuickStageBase
         //CharacterSelection.SelectedCharacter.SetActive(true);
         while (!DistanceConfirmed) yield return null;
 
-        WalkButton.SetActive(false);
-        ConfirmButton.SetActive(false);
+        //WalkButton.SetActive(false);
+        //ConfirmButton.SetActive(false);
         base.Finish();
     }
 

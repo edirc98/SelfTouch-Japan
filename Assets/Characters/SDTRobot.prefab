@@ -1080,7 +1080,7 @@ GameObject:
   - component: {fileID: 2695211267850543774}
   - component: {fileID: 8324759371647121636}
   m_Layer: 0
-  m_Name: RobotAvatar
+  m_Name: SDTRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

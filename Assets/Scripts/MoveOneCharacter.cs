@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveCharacter : MonoBehaviour
+public class MoveOneCharacter : MonoBehaviour
 {
-    public SDTSelectCharacter CharacterSelection;
-    public SDTMoveCharacter moveCharacter;
+    public SDTOneCharacter CharacterSelection;
+    public STDMoveOneCharacter moveCharacter;
 
     public bool isMoving = false;
 
