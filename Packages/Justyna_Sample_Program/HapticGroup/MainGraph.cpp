@@ -1,0 +1,418 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//  MainGraph.cpp
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  This source file includes functions for MainGraph class
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Programmer:		Masayuki HARA (Assitant Professor)
+//  Affiliation:	Higuchi & Yamamoto Lab. (Advanced Mechatoronics Lab.)
+//					School of Engineering, The University of Tokyo
+//  Created date:	13.01.2009
+//	Updated date:	19.01.2009
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  include
+
+#include <windows.h>
+#include <string.h>
+#include <stdio.h>
+#include <malloc.h>
+#include "MainGraph.h"
+#include "WinStyleMain.h"
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  define
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  variable
+
+struct tagMainGraph_LIST
+{
+	class tagMainGraph *hMainGraph;
+	struct tagMainGraph_LIST *Next;
+};
+
+typedef tagMainGraph* ptagMainGraph;
+
+tagMainGraph WinGraph;
+tagMainGraph_LIST *MainGraph_LIST_HEAD = NULL;
+UINT MainGraphCounter = 0;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  function
+
+LRESULT CALLBACK MainGraphWndProc(HWND, UINT, WPARAM, LPARAM);
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  void MainGraph_LIST_ADD(class tagMainGraph *)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Add the new element to the list
+///////////////////////////////////////////////////////////////////////////////////////////////////
+void MainGraph_LIST_ADD(class tagMainGraph *hMainGraph2ADD)
+{
+	tagMainGraph_LIST *MainGraph_ELEMENT, *AUX;
+
+	//  Create a new element
+	MainGraph_ELEMENT = new(tagMainGraph_LIST);
+	
+	MainGraph_ELEMENT->Next = NULL;
+	MainGraph_ELEMENT->hMainGraph = hMainGraph2ADD;
+
+	//  Add to the list
+	if (MainGraph_LIST_HEAD == NULL) {
+		MainGraph_LIST_HEAD=MainGraph_ELEMENT;
+	} else {
+		AUX = MainGraph_LIST_HEAD;
+		while (AUX->Next != NULL) {
+			AUX = AUX->Next;
+		}
+		AUX->Next = MainGraph_ELEMENT;
+	}
+}
+
+//  void MainGraph_LIST_ADD(class tagMainGraph *)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  void MainGraph_LIST_REMOVE(HWND)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Remove the element to the list
+///////////////////////////////////////////////////////////////////////////////////////////////////
+void MainGraph_LIST_REMOVE(HWND MainGraphWnd2REMOVE)
+{
+
+	tagMainGraph_LIST *AUX, *AUX_PREV;
+	BOOL Out = FALSE;
+	char CurClassName[50];
+	char ClassName2REMOVE[50];
+
+	GetClassName(MainGraphWnd2REMOVE, (LPSTR)ClassName2REMOVE, 50);
+
+	AUX = MainGraph_LIST_HEAD;
+	AUX_PREV = MainGraph_LIST_HEAD;
+	while (!Out) {
+		GetClassName(AUX->hMainGraph->hMainGraphWnd, (LPSTR)CurClassName, 50);
+		if (strcmp(ClassName2REMOVE, CurClassName) == 0) {
+			if (AUX_PREV==MainGraph_LIST_HEAD) {		//  First element of the list
+				MainGraph_LIST_HEAD = AUX->Next;
+				delete(AUX);
+			} else {								//  Other elements
+				AUX_PREV->Next = AUX->Next;
+				delete(AUX);
+			}
+			Out = TRUE;
+		} else {
+			if (AUX->Next != NULL) {
+				AUX_PREV = AUX;
+				AUX = AUX->Next;
+			} else {
+				Out = TRUE;
+			}
+		}
+	}
+}
+
+//  void MainGraph_LIST_REMOVE(HWND)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  ptagMainGraph MainGraph_LIST_GET(HWND)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Get the list
+///////////////////////////////////////////////////////////////////////////////////////////////////
+ptagMainGraph MainGraph_LIST_GET(HWND MainGraphWnd2GET)
+{
+	tagMainGraph_LIST *AUX;
+	char CurClassName[50];
+	char ClassName2GET[50];
+	BOOL Out=FALSE;
+
+	GetClassName(MainGraphWnd2GET,(LPSTR)ClassName2GET,50);
+
+	AUX=MainGraph_LIST_HEAD;
+	while (!Out && AUX)	{
+		GetClassName(AUX->hMainGraph->hMainGraphWnd, (LPSTR)CurClassName, 50);
+		if (strcmp(ClassName2GET, CurClassName) == 0) {
+			Out = TRUE;					 //  AUX pointing to the right tagMainGraph_LIST
+		} else {
+			AUX = AUX->Next;
+			if (AUX == NULL) {
+				Out = TRUE;
+			}
+		}
+	}
+	
+	if (AUX != NULL) {
+		return AUX->hMainGraph;
+	}
+
+	return NULL;
+}
+
+//  ptagMainGraph MainGraph_LIST_GET(HWND)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  tagMainGraph::tagMainGraph()
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Constructor of class
+///////////////////////////////////////////////////////////////////////////////////////////////////
+tagMainGraph::tagMainGraph()
+{
+	Active = FALSE;
+}
+
+//  tagMainGraph::tagMainGraph()
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  BOOL tagMainGraph::Init(HWND, HINSTANCE, 
+//					intw, int,float, float, float, float, char WndTitle[], UINT, UINT)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Initialize the graph window
+///////////////////////////////////////////////////////////////////////////////////////////////////
+BOOL tagMainGraph::Init(HWND hParentWnd, HINSTANCE hInst, int nCmdShow, int _NumData,
+						float _dataXmin, float _dataXmax, float _dataYmin, float _dataYmax,
+						char WndTitle[], UINT _MainGraph_XSize, UINT _MainGraph_YSize)
+{
+	char ClassName[50];
+	WNDCLASS Window;
+	int i;
+
+	MainGraph_XSize = _MainGraph_XSize;
+	MainGraph_YSize = _MainGraph_YSize;
+
+	sprintf(ClassName, "MainGraph %u", MainGraphCounter);
+
+	Window.style = CS_HREDRAW | CS_VREDRAW;
+	Window.lpfnWndProc = MainGraphWndProc;
+	Window.cbClsExtra = 0;
+	Window.cbWndExtra = 0;
+	Window.hInstance = hInst;
+	Window.hIcon = NULL;
+	Window.hCursor = NULL;
+	Window.hbrBackground= (HBRUSH)GetStockObject(BLACK_BRUSH);
+	Window.lpszMenuName	= NULL; // MAKEINTRESOURCE(IDR_MAINMENU);
+	Window.lpszClassName= ClassName;
+
+	RegisterClass(&Window);
+
+	hMainGraphWnd = CreateWindow(
+		ClassName,
+		WndTitle,
+		WS_CHILD | WS_CLIPSIBLINGS | WS_OVERLAPPEDWINDOW,
+//		WS_CHILD | WS_CAPTION | WS_THICKFRAME| WS_CLIPSIBLINGS,
+		424,//0,//180,
+		390,//30,
+		MainGraph_XSize+10,
+		MainGraph_YSize+30,
+		hParentWnd,
+		NULL,
+		hInst,
+		NULL);
+
+	ShowWindow(hMainGraphWnd, nCmdShow);
+	UpdateWindow(hMainGraphWnd);
+	
+	// Add the graph to the list
+	MainGraph_LIST_ADD(this);
+
+	// Draw graph frames
+	NumData = _NumData;
+	hParent = hParentWnd;
+
+	hChildGraph=(tagGraph *)calloc(NumData, sizeof(tagGraph));	
+
+	for (i = 0; i < NumData; i++) {
+		hChildGraph[i].Init(hMainGraphWnd, hInst, nCmdShow, 0,
+			(UINT)(i * MainGraph_YSize / NumData),(UINT)MainGraph_XSize,
+			(UINT)((i + 1) * MainGraph_YSize / NumData), _dataXmin,_dataXmax,_dataYmin,_dataYmax);	
+		hChildGraph[i].Draw();
+	}
+
+	MainGraphCounter++;
+
+	return TRUE;
+
+}
+
+//  BOOL tagMainGraph::Init(HWND, HINSTANCE, 
+//					intw, int,float, float, float, float, char WndTitle[], UINT, UINT)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  void tagMainGraph::Clear(void)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Clear the graph
+///////////////////////////////////////////////////////////////////////////////////////////////////
+void tagMainGraph::Clear(void)
+{
+	int i;
+	
+	// Remove graphs
+	for (i = 0; i < NumData; i++) {
+		hChildGraph[i].Clear();
+	}
+	free(hChildGraph);
+
+	DestroyWindow(hMainGraphWnd);
+
+	MainGraph_LIST_REMOVE(this->hMainGraphWnd);
+
+}
+
+//  void tagMainGraph::Clear(void)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  void tagMainGraph::SetScale(float, float, float, float)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Set the graph scale
+///////////////////////////////////////////////////////////////////////////////////////////////////
+void tagMainGraph::SetScale(float _dataXmin, float _dataXmax, float _dataYmin, float _dataYmax)
+{
+	int i;
+
+	for (i = 0; i < NumData; i++) {
+		hChildGraph[i].SetScale(_dataXmin, _dataXmax, _dataYmin, _dataYmax);
+		hChildGraph[i].Draw();
+	}
+}
+
+//  void tagMainGraph::SetScale(float, float, float, float)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  BOOL tagMainGraph::Plot(float, float *, COLORREF)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Plot a point on the graph
+///////////////////////////////////////////////////////////////////////////////////////////////////
+BOOL tagMainGraph::Plot(float dataX, float *dataY, COLORREF color)
+{
+	int i;
+	
+	for (i = 0; i < NumData; i++) {
+		hChildGraph[i].Plot(dataX, dataY[i], color);
+	}
+
+	return TRUE;
+}
+
+//  BOOL tagMainGraph::Plot(float, float *, COLORREF)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  BOOL tagMainGraph::Draw(void)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Draw the graph frame
+///////////////////////////////////////////////////////////////////////////////////////////////////
+BOOL tagMainGraph::Draw(void)
+{
+	HDC hdc;
+	int i;
+
+	hdc = GetDC(hMainGraphWnd);
+
+	for (i = 0; i < NumData; i++) {
+		hChildGraph[i].Draw();
+	}
+
+	ReleaseDC(hMainGraphWnd, hdc);
+
+	return TRUE;
+}
+
+//  BOOL tagMainGraph::Draw(void)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  BOOL tagMainGraph::Paint(void)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Paint the graph frame
+///////////////////////////////////////////////////////////////////////////////////////////////////
+BOOL tagMainGraph::Paint(void)
+{
+	HDC hdc;
+	PAINTSTRUCT ps;
+	int i;
+
+	hdc = BeginPaint(hMainGraphWnd, &ps);
+
+	for (i = 0; i < NumData; i++) {
+		hChildGraph[i].Paint();
+	}
+
+	EndPaint(hMainGraphWnd, &ps);
+
+	return TRUE;
+}
+
+//  BOOL tagMainGraph::Paint(void)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  LRESULT CALLBACK MainGraphWndProc(HWND, UINT, WPARAM, LPARAM)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//  Procedure of the main graph of window
+///////////////////////////////////////////////////////////////////////////////////////////////////
+LRESULT CALLBACK MainGraphWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+	HINSTANCE hInst;
+	tagMainGraph *pMainGraph;
+	
+	hInst = (HINSTANCE)GetWindowLong(hWnd, GWL_HINSTANCE);
+
+	switch (msg) {
+		case WM_PAINT:
+			pMainGraph = MainGraph_LIST_GET(hWnd);
+			if (pMainGraph) {
+				pMainGraph->Paint();
+			}
+			break;
+
+		case WM_CLOSE:
+			DestroyWindow(hWnd);
+			pMainGraph = MainGraph_LIST_GET(hWnd);
+			if (pMainGraph) {
+				pMainGraph->Active = FALSE;
+				SendMessage(pMainGraph->hParent, WM_COMMAND, IDC_CLOSEGRAPH, 0L);
+			}
+			break;
+
+		default :
+			return DefWindowProc(hWnd, msg, wParam, lParam);
+	}
+
+	return 0L;
+}
+
+//  LRESULT CALLBACK MainGraphWndProc(HWND, UINT, WPARAM, LPARAM)
+///////////////////////////////////////////////////////////////////////////////////////////////////
