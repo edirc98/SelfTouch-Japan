@@ -1,0 +1,125 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by HapticGroup.rc
+//
+#define IDC_SAVE_PID                    3
+#define IDC_LOAD_PID                    4
+#define IDC_INITIALIZATION              5
+#define IDC_LOAD_PID2                   6
+#define IDC_RESET                       6
+#define IDR_MENU1                       101
+#define IDD_ABOUT                       102
+#define IDI_ICON1                       106
+#define IDD_SAVE_DATA                   110
+#define IDD_CAMERA_WORK                 116
+#define IDB_BITMAP1                     117
+#define IDD_EXP_CONFIG                  119
+#define IDD_EXP_CONDITION               120
+#define IDD_COM_PORT_SET                121
+#define IDC_CANCEL                      1021
+#define IDC_SAVE                        1022
+#define IDC_RADIO1                      1023
+#define IDC_RADIO2                      1024
+#define IDC_EDIT1                       1025
+#define IDC_EDIT2                       1026
+#define IDC_COMBO1                      1027
+#define IDC_PGAIN_2                     1027
+#define IDC_IGAIN_0                     1028
+#define IDC_IGAIN_1                     1029
+#define IDC_IGAIN_2                     1030
+#define IDC_DGAIN_0                     1031
+#define IDC_DGAIN_1                     1032
+#define IDC_INIT_VIEWPOINT              1033
+#define IDC_DGAIN_2                     1033
+#define IDC_GRID                        1034
+#define IDC_INERTIA                     1034
+#define IDC_CHECK                       1035
+#define IDC_VISCOSITY                   1035
+#define IDC_STIFFNESS                   1036
+#define IDC_PICT_BOX                    1037
+#define IDC_DELAY_TIME                  1037
+#define IDC_SHADOW_OFF                  1039
+#define IDC_SCROLLBAR1                  1040
+#define IDC_SCROLLBAR2                  1041
+#define IDC_COMP_INERTIA                1041
+#define IDC_SCROLLBAR3                  1042
+#define IDC_COMP_VISCOSITY              1042
+#define IDC_SCROLLBAR4                  1043
+#define IDC_COMP_STIFFNESS              1043
+#define IDC_SCROLLBAR5                  1044
+#define IDC_SCROLLBAR6                  1045
+#define IDC_SCROLLBAR7                  1046
+#define IDC_SCROLLBAR8                  1047
+#define IDC_SCROLLBAR9                  1048
+#define IDC_DOLLY_EDIT                  1049
+#define IDC_TUMBLE_EDIT                 1050
+#define IDC_LOGO                        1050
+#define IDC_PAN_EDIT                    1051
+#define IDC_ZOOM_EDIT                   1052
+#define IDC_UPDOWN_EDIT                 1053
+#define IDC_DEV_COMBO                   1053
+#define IDC_DOWNTILT_EDIT               1054
+#define IDC_UPDOWNTILT_EDIT             1054
+#define IDC_PGAIN_0                     1054
+#define IDC_COM_COMBO                   1054
+#define IDC_X_TRACK_EDIT                1055
+#define IDC_PGAIN_1                     1055
+#define IDC_BAUDRATE_COMBO              1055
+#define IDC_Y_TRACK_EDIT                1056
+#define IDC_COM_OPEN                    1056
+#define IDC_Z_TRACK_EDIT                1057
+#define IDC_COM_CLOSE                   1057
+#define IDC_SCROLLBAR10                 1058
+#define IDC_DEFAULT_SET                 1058
+#define IDC_RADIO_X_NORMAL              1059
+#define IDC_PARALLAX_EDIT               1059
+#define IDC_RADIO_X_MIRROR              1060
+#define IDC_SHADOW_ON                   1060
+#define IDC_STEREOVISION_OFF            1061
+#define IDC_RADIO_NONE                  1062
+#define IDC_CHECK3                      1062
+#define IDC_CONDITION_1                 1063
+#define IDC_RADIO_MASTER                1064
+#define IDC_STEREOVISION_ON             1064
+#define IDC_RADIO_NONE2                 1065
+#define IDC_RADIO_SLAVE                 1065
+#define IDC_CONDITION_0                 1065
+#define IDC_CONDITION_2                 1066
+#define IDC_CONDITION_3                 1067
+#define IDC_CONDITION_4                 1068
+#define IDC_RADIO_Y_NORMAL              1081
+#define IDC_RADIO_Y_MIRROR              1082
+#define IDC_RADIO_Z_NORMAL              1083
+#define IDC_RADIO_Z_MIRROR              1084
+#define ID_FILE_EXIT                    40001
+#define ID_ABOUT                        40002
+#define ID_SAMPLER_ON                   40003
+#define ID_SAMPLER_OFF                  40004
+#define ID_FILE_SAVEDATA                40005
+#define ID_OPENGL_DISPLAY               40007
+#define ID_GRAPH                        40008
+#define ID_OPENGL_CONFIGURATION         40009
+#define ID_FILE_SAVE_DATA               40010
+#define ID_Menu                         40011
+#define ID_CONFIGURATION                40012
+#define ID_CALIBRATION                  40013
+#define ID_SAMPLER_ZEROVOLTOUTPUT       40014
+#define ID_ZERO_VOLT_OUTPUT             40015
+#define ID_ZEROVOLTOUTPUT               40016
+#define ID_INITIALIZATION_ZEROVOLTOUTPUT 40017
+#define IDC_ZEROVOLTOUTPUT              40018
+#define IDM_INIT_NI_CARD                40019
+#define IDC_ZERO_VOLT_OUTPUT            40020
+#define ID_INIT_NI_CARD                 40021
+#define IDM_SERIAL_COM_CONFIG           40022
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        122
+#define _APS_NEXT_COMMAND_VALUE         40023
+#define _APS_NEXT_CONTROL_VALUE         1065
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif
