@@ -2631,7 +2631,7 @@ public class HapticInspector : Editor
 #region Extension
 public static class MatrixExtensions
 {
-    public static Quaternion ExtractRotation(this Matrix4x4 matrix)
+    public static Quaternion ExtractRotation(Matrix4x4 matrix)
     {
         Vector3 forward;
         forward.x = matrix.m02;
@@ -2646,7 +2646,7 @@ public static class MatrixExtensions
         return Quaternion.LookRotation(forward, upwards);
     }
 
-    public static Vector3 ExtractPosition(this Matrix4x4 matrix)
+    public static Vector3 ExtractPosition(Matrix4x4 matrix)
     {
         Vector3 position;
         position.x = matrix.m03;
@@ -2655,7 +2655,7 @@ public static class MatrixExtensions
         return position;
     }
 
-    public static Vector3 ExtractScale(this Matrix4x4 matrix)
+    public static Vector3 ExtractScale(Matrix4x4 matrix)
     {
         Vector3 scale;
         scale.x = new Vector4(matrix.m00, matrix.m10, matrix.m20, matrix.m30).magnitude;
