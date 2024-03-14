@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.quickvr.quickbase": "https://gitlab.com/eventlabprojects/quickvr.packages/com.quickvr.quickbase.git",
+    "com.quickvr.quickbase": "file:C:/Users/edirc/Documents/Unity Projects Repos/EventLabPackages/QuickVR/com.quickvr.quickbase",
     "com.unity.collab-proxy": "2.0.1",
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.rider": "3.0.18",

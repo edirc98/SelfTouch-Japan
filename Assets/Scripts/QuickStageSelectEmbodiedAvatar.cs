@@ -22,9 +22,15 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
             return QuickSingletonManager.GetInstance<QuickVRManager>();
         }
     }
+    protected override void Start()
+    {
+        //Conditions = QuickSingletonManager.GetInstance<StageSetConditionsOrder>(); 
+        base.Start();
+    }
     protected override IEnumerator CoUpdate()
     {
         int currentIteration = MainLoop.GetCurrentInteration();
+        Debug.Log("Current iter: " + currentIteration); 
         if (Conditions.CurrentConditions[currentIteration].AvatarBodyType == Condition.BodyType.Human)
         {
             HumanAvatar.gameObject.SetActive(true);
