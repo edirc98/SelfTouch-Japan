@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class ObjectFollow : MonoBehaviour
 {
+    [Header("Follower Object Control")]
     [SerializeField] private GameObject FollowerObject;
+    public bool applyPosition = true;
+    public bool applyRotation = false; 
+    [Header("Position and rotation adjustment")]
     [SerializeField] private Vector3 PosOffset;
     [SerializeField] private Vector3 RotOffset;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +22,16 @@ public class ObjectFollow : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        FollowerObject.transform.position = transform.position + PosOffset;
-        Quaternion rotOffsetQuat = Quaternion.Euler(RotOffset);
-        FollowerObject.transform.rotation = new Quaternion(transform.rotation.x, 0, 0, 1);
+        if (applyPosition)
+        {
+            FollowerObject.transform.position = transform.position + PosOffset;
+        }
+        if (applyRotation)
+        {
+            Quaternion rotOffsetQuat = Quaternion.Euler(RotOffset);
+            FollowerObject.transform.rotation = new Quaternion(transform.rotation.x, 0, 0, 1);
+        }
+        
     }
 
     public void SetPositionOffset(Vector3 newPosOffset)

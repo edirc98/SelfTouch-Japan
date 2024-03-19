@@ -7,8 +7,12 @@ using System.IO;
 public class SerialController : MonoBehaviour
 {
     public SerialHandler serialHandler;
+    [Header("Object Control")]
     public GameObject targetObject;
     public Vector3 initialPosition;
+    public bool ApplyPosition = true;
+    public bool ApplyRotation = false; 
+
 
     [Header("I/O Controller")]
     //[SerializeField, NonEditable]
@@ -35,8 +39,16 @@ public class SerialController : MonoBehaviour
     void FixedUpdate()
     {
         // Move target object based on received data
-        targetObject.transform.position = new Vector3((float)-receivedData[1] / 1000.0f + initialPosition.x, (float)receivedData[2] / 1000.0f + initialPosition.y, (float)receivedData[0] / 1000.0f + initialPosition.z);
-        targetObject.transform.eulerAngles = new Vector3(receivedData[4], -receivedData[5], receivedData[3]);
+        if (ApplyPosition)
+        {
+            targetObject.transform.position = new Vector3((float)-receivedData[1] / 1000.0f + initialPosition.x, (float)receivedData[2] / 1000.0f + initialPosition.y, (float)receivedData[0] / 1000.0f + initialPosition.z);
+
+        }
+        if (ApplyRotation)
+        {
+            targetObject.transform.eulerAngles = new Vector3(receivedData[4], -receivedData[5], receivedData[3]);
+        }
+        
     }
 
     // Process when serial data is received  
