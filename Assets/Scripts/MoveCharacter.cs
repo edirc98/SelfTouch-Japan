@@ -29,10 +29,14 @@ public class MoveCharacter : MonoBehaviour
 
     private void Update()
     {
-        if(CharacterSelection.SelectedCharacter.transform.position.z < 0.5f)
+        if(CharacterSelection.SelectedCharacter != null)
         {
-            StopCharacter();
-            ConfirmDistance(); 
+            if (CharacterSelection.SelectedCharacter.transform.position.z < 1.0f)
+            {
+                StopCharacter();
+                ConfirmDistance();
+            }
         }
+        
     }
 }
