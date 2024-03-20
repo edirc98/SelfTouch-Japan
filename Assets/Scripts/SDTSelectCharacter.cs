@@ -26,6 +26,7 @@ public class SDTSelectCharacter : QuickStageBase
     private int lastSelected = 0;
 
     private bool validSelected = false;
+    public bool canSkipByDistance; 
 
     protected override void Start()
     {
@@ -87,6 +88,7 @@ public class SDTSelectCharacter : QuickStageBase
         }
         SelectedCharacterAnimator = SelectedCharacter.GetComponent<Animator>();
         SelectedCharacter.SetActive(true);
+        canSkipByDistance = true; 
         return base.CoUpdate();
     }
 }

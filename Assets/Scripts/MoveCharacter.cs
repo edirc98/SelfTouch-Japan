@@ -23,16 +23,17 @@ public class MoveCharacter : MonoBehaviour
 
     public void ConfirmDistance()
     {
-        CharacterSelection.SelectedCharacterAnimator = null;
+        //CharacterSelection.SelectedCharacter = null;
         moveCharacter.Finish();
     }
 
     private void Update()
     {
-        if(CharacterSelection.SelectedCharacter != null)
+        if(CharacterSelection.SelectedCharacter != null && CharacterSelection.canSkipByDistance)
         {
             if (CharacterSelection.SelectedCharacter.transform.position.z < 1.0f)
             {
+                CharacterSelection.canSkipByDistance = false; 
                 StopCharacter();
                 ConfirmDistance();
             }
