@@ -270,9 +270,9 @@ MonoBehaviour:
   _instructionsTimePause: 0.5
   _guiList: []
   _sceneActions:
-  - _sceneName: EmbodiedEnt
-    _type: 3
-  _activeScene: EmbodiedEnt
+  - _sceneName: Touch Task
+    _type: 0
+  _activeScene: Touch Task
 --- !u!1 &30329028
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &144817110
 Transform:
   m_ObjectHideFlags: 0
@@ -1207,7 +1207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &253327678
 Transform:
   m_ObjectHideFlags: 0
@@ -6339,7 +6339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1076955373
 Transform:
   m_ObjectHideFlags: 0
@@ -7901,7 +7901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1606459569
 Transform:
   m_ObjectHideFlags: 0
@@ -8793,7 +8793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1882030595
 Transform:
   m_ObjectHideFlags: 0
@@ -8957,6 +8957,7 @@ MonoBehaviour:
   TimesRobot: 0
   TimesMale: 0
   TimesFemale: 0
+  canSkipByDistance: 0
 --- !u!1 &1909242518
 GameObject:
   m_ObjectHideFlags: 0
@@ -9216,7 +9217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2021123759
 Transform:
   m_ObjectHideFlags: 0
