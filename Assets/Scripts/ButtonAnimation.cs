@@ -13,6 +13,8 @@ public class ButtonAnimation : MonoBehaviour
 
     public bool WalkButton = false;
     public bool ConfirmButton = false;
+    public bool CanWalk = false; 
+    public bool CanConfirm = false; 
 
     private bool presed = false;
     // Start is called before the first frame update
@@ -38,25 +40,30 @@ public class ButtonAnimation : MonoBehaviour
                 ButtonAnimator.SetTrigger("PressButton");
                 if (WalkButton)
                 {
-                    if (moveCharacter.isMoving == false)
+                    if (CanWalk)
                     {
-                        Debug.Log("START Moving Character");
-                        moveCharacter.MoveCharacterForward();
+                        if (moveCharacter.isMoving == false)
+                        {
+                            Debug.Log("START Moving Character");
+                            moveCharacter.MoveCharacterForward();
+                        }
+                        else if (moveCharacter.isMoving == true)
+                        {
+                            Debug.Log("STOP Moving Character");
+                            moveCharacter.StopCharacter();
+                        }
                     }
-                    else if (moveCharacter.isMoving == true)
-                    {
-                        Debug.Log("STOP Moving Character");
-                        moveCharacter.StopCharacter();
-                    }
+                    
                 }
                 else if (ConfirmButton)
                 {
-                    Debug.Log("CONFIRM Distance");
-                    moveCharacter.ConfirmDistance();
-                    //TODO
+                    if (CanConfirm)
+                    {
+                        Debug.Log("CONFIRM Distance");
+                        moveCharacter.ConfirmDistance();
+                        //TODO
+                    }
                 }
-
-                
                 ButtonSound.Play();
             }
         }

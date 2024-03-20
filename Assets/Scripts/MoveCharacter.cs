@@ -12,18 +12,27 @@ public class MoveCharacter : MonoBehaviour
     public void MoveCharacterForward()
     {
         isMoving = true;
-        CharacterSelection.SelectedCharacterAnimator.SetTrigger("StartWalk");
+        CharacterSelection.SelectedCharacterAnimator.SetBool("IsWalking", true);
     }
 
     public void StopCharacter()
     {
         isMoving = false;
-        CharacterSelection.SelectedCharacterAnimator.SetTrigger("EndWalk");
+        CharacterSelection.SelectedCharacterAnimator.SetBool("IsWalking", false);
     }
 
     public void ConfirmDistance()
     {
-        moveCharacter.Finish();
         CharacterSelection.SelectedCharacterAnimator = null;
+        moveCharacter.Finish();
+    }
+
+    private void Update()
+    {
+        if(CharacterSelection.SelectedCharacter.transform.position.z < 0.5f)
+        {
+            StopCharacter();
+            ConfirmDistance(); 
+        }
     }
 }
