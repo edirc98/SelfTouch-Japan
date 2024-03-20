@@ -41,7 +41,7 @@ public class SerialController : MonoBehaviour
         // Move target object based on received data
         if (ApplyPosition)
         {
-            targetObject.transform.position = new Vector3((float)-receivedData[1] / 1000.0f + initialPosition.x, (float)receivedData[2] / 1000.0f + initialPosition.y, (float)receivedData[0] / 1000.0f + initialPosition.z);
+            targetObject.transform.position = new Vector3((float)receivedData[1] / 1000.0f + initialPosition.x, (float)receivedData[2] / 1000.0f + initialPosition.y, (float)receivedData[0] / 1000.0f + initialPosition.z);
 
         }
         if (ApplyRotation)

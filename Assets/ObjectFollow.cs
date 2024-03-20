@@ -38,5 +38,9 @@ public class ObjectFollow : MonoBehaviour
     {
         PosOffset = newPosOffset; 
     }
+    public void SetRotationOffset(Vector3 newRotOffset)
+    {
+        RotOffset = newRotOffset;
+    }
 
 }
