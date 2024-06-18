@@ -2748,7 +2748,7 @@ MonoBehaviour:
   _instructionsTimePause: 0.5
   _guiList: []
   CurrentConditions:
-  - AvatarBodyType: 1
+  - AvatarBodyType: 2
     ConditionTouchType: 1
   - AvatarBodyType: 2
     ConditionTouchType: 0
@@ -4333,7 +4333,7 @@ MonoBehaviour:
   FollowerObject: {fileID: 0}
   applyPosition: 1
   applyRotation: 1
-  PosOffset: {x: 0, y: 0.1, z: -0.15}
+  PosOffset: {x: 0.03, y: 0.175, z: -0.135}
   RotOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &895214556
 GameObject:
@@ -10534,17 +10534,17 @@ MonoBehaviour:
   - AvatarName: Human
     LeftHandPosOffset: {x: 0, y: 1.21, z: 0.25}
     LefthHandRotOffset: {x: 0, y: 0, z: 7}
-    RightHandPosOffset: {x: -0.05, y: 0.11, z: -0.13}
+    RightHandPosOffset: {x: -0.035, y: 0.162, z: -0.15}
     RightHandRotOffset: {x: 0, y: 0, z: 0}
   - AvatarName: Robot
     LeftHandPosOffset: {x: 0, y: 1.26, z: 0.22}
     LefthHandRotOffset: {x: 0, y: 0, z: 8}
-    RightHandPosOffset: {x: 0, y: 0.12, z: -0.15}
+    RightHandPosOffset: {x: 0.03, y: 0.175, z: -0.135}
     RightHandRotOffset: {x: 0, y: 0, z: 0}
   - AvatarName: Treent
     LeftHandPosOffset: {x: 0, y: 1.23, z: 0.22}
     LefthHandRotOffset: {x: 0, y: 0, z: 5}
-    RightHandPosOffset: {x: 0, y: 0.1, z: -0.15}
+    RightHandPosOffset: {x: 0.04, y: 0.16, z: -0.14}
     RightHandRotOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2147286103
 GameObject:
@@ -21066,7 +21066,7 @@ MonoBehaviour:
   m_Animator: {fileID: 6703593162170673937}
   _showControlsBody: 0
   _showControlsFingersLeftHand: 0
-  _showControlsFingersRightHand: 0
+  _showControlsFingersRightHand: 1
   _showControlsFace: 0
   _isInitialized: 1
   _gestureSettingsLeftHand: {fileID: 0}
@@ -21075,7 +21075,7 @@ MonoBehaviour:
   m_ApplyHeadRotation: 1
   m_ApplyHeadPosition: 1
   _cameraMode: 0
-  m_IKControls: 000000000000000002000000020000000000000000000000020000000200000002000000020000000200000002000000020000000200000002000000020000000000000000000000
+  m_IKControls: 000000000000000002000000020000000000000000000000020000000200000002000000020000000200000001000000010000000100000001000000010000000000000000000000
   m_IKTrackingUpdateMode:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
