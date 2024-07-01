@@ -1160,6 +1160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 8887638256147777949}
   m_boneMid: {fileID: 8887638256147777949}
   m_boneLimb: {fileID: 240916598411148107}
@@ -1349,6 +1350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 492263285358105353}
   m_boneMid: {fileID: 1444031456935290643}
   m_boneLimb: {fileID: 7869104819803255986}
@@ -1407,6 +1409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 240916598411148107}
   m_boneMid: {fileID: 240916598411148107}
   m_boneLimb: {fileID: 3827906002743195980}
@@ -1754,6 +1757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 7974609988945840349}
   m_boneMid: {fileID: 8688635070907839749}
   m_boneLimb: {fileID: 8374536802792675695}
@@ -2000,6 +2004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 7469684583191151878}
   m_boneMid: {fileID: 8031912849947027439}
   m_boneLimb: {fileID: 5277206282931745534}
@@ -2058,6 +2063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 2356573385473034924}
   m_boneMid: {fileID: 6605972546961991043}
   m_boneLimb: {fileID: 7861540519751392412}
@@ -2148,6 +2154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 1125590575769449945}
   m_boneMid: {fileID: 4188624961603291433}
   m_boneLimb: {fileID: 5826746939139543546}
@@ -2301,6 +2308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 357385226903934887}
   m_boneMid: {fileID: 4870996120518086366}
   m_boneLimb: {fileID: 7953424072393664168}
@@ -2391,6 +2399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 5068025771027104956}
   m_boneMid: {fileID: 1493319651364000519}
   m_boneLimb: {fileID: 2704030673704678597}
@@ -2574,6 +2583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 3659362073212996700}
   m_boneMid: {fileID: 4865545293277416493}
   m_boneLimb: {fileID: 3970918015550608071}
@@ -2898,6 +2908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 620530966780495165}
   m_boneMid: {fileID: 714495933060602819}
   m_boneLimb: {fileID: 6483292581516086932}
@@ -3050,6 +3061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 0}
   m_boneMid: {fileID: 0}
   m_boneLimb: {fileID: 7509451418090711456}
@@ -3109,6 +3121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 240916598411148107}
   m_boneMid: {fileID: 240916598411148107}
   m_boneLimb: {fileID: 3827906001101061787}
@@ -3174,6 +3187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 5059716033404358795}
   m_boneMid: {fileID: 658618288812924606}
   m_boneLimb: {fileID: 8057138818338539862}
@@ -3418,6 +3432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 4499054754907354864}
   m_boneMid: {fileID: 8370745304870637229}
   m_boneLimb: {fileID: 5452254491303093475}
@@ -3724,6 +3739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 7309812051817405139}
   m_boneMid: {fileID: 2805521588339113188}
   m_boneLimb: {fileID: 898839024310449597}
@@ -4158,6 +4174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 7539260142248954749}
   m_boneMid: {fileID: 5690156630956775038}
   m_boneLimb: {fileID: 5768021470281597771}
@@ -4467,6 +4484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 1119206541230899983}
   m_boneMid: {fileID: 5545904890196096001}
   m_boneLimb: {fileID: 8123813409995408750}
@@ -4620,8 +4638,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3645045178477607826}
   - component: {fileID: 3827906002684472281}
-  - component: {fileID: 3827906001819589412}
-  - component: {fileID: 3827906001819589411}
   m_Layer: 0
   m_Name: FemaleEmbodied
   m_TagString: Untagged
@@ -4674,44 +4690,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3827906001819589412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4169803202693701928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39695b9dba667a74d931d98210c83a43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Animator: {fileID: 3827906002684472281}
-  _showControlsBody: 0
-  _showControlsFingersLeftHand: 0
-  _showControlsFingersRightHand: 0
-  _showControlsFace: 0
-  _isInitialized: 1
-  _gestureSettingsLeftHand: {fileID: 0}
-  _gestureSettingsRightHand: {fileID: 0}
-  _useFootprints: 1
-  m_ApplyHeadRotation: 1
-  m_ApplyHeadPosition: 1
-  _rotateCameraMono: 1
-  m_IKControls: 
-  m_IKTrackingUpdateMode: []
---- !u!114 &3827906001819589411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4169803202693701928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cccb9b074c446df4bb67e19a878cc19f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4206134361271240842
 GameObject:
   m_ObjectHideFlags: 0

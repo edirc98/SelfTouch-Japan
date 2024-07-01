@@ -1233,8 +1233,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5362877632929620070}
   - component: {fileID: 2057274352224025116}
-  - component: {fileID: 5311403140496006976}
-  - component: {fileID: 5311403140496006983}
   m_Layer: 0
   m_Name: MaleEmbodied
   m_TagString: Untagged
@@ -1288,44 +1286,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5311403140496006976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4694743571420953308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39695b9dba667a74d931d98210c83a43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Animator: {fileID: 2057274352224025116}
-  _showControlsBody: 0
-  _showControlsFingersLeftHand: 0
-  _showControlsFingersRightHand: 0
-  _showControlsFace: 0
-  _isInitialized: 1
-  _gestureSettingsLeftHand: {fileID: 0}
-  _gestureSettingsRightHand: {fileID: 0}
-  _useFootprints: 1
-  m_ApplyHeadRotation: 1
-  m_ApplyHeadPosition: 1
-  _rotateCameraMono: 1
-  m_IKControls: 
-  m_IKTrackingUpdateMode: []
---- !u!114 &5311403140496006983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4694743571420953308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cccb9b074c446df4bb67e19a878cc19f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4714491513666649377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 2412164847208043235}
   m_boneMid: {fileID: 2412164847208043235}
   m_boneLimb: {fileID: 5311403139094330599}
@@ -1949,6 +1910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 3538295988828087719}
   m_boneMid: {fileID: 5228482109046378101}
   m_boneLimb: {fileID: 8187973272926921162}
@@ -2100,6 +2062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 1721000633258741653}
   m_boneMid: {fileID: 2893655045402897225}
   m_boneLimb: {fileID: 56154129657304677}
@@ -2283,6 +2246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 2412164847208043235}
   m_boneMid: {fileID: 2412164847208043235}
   m_boneLimb: {fileID: 5311403140606503856}
@@ -2441,6 +2405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 5668812298303848137}
   m_boneMid: {fileID: 2089100308447729804}
   m_boneLimb: {fileID: 237857591963245344}
@@ -2697,6 +2662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 7771882566411773150}
   m_boneMid: {fileID: 4347882201918820244}
   m_boneLimb: {fileID: 5832242145642053257}
@@ -2755,6 +2721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 3591061451413690831}
   m_boneMid: {fileID: 5631106412986904560}
   m_boneLimb: {fileID: 7331433190138542403}
@@ -2844,6 +2811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 5495280198415567619}
   m_boneMid: {fileID: 5100355551321878444}
   m_boneLimb: {fileID: 3790324991801967534}
@@ -2964,6 +2932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 3295846982968446612}
   m_boneMid: {fileID: 5791646206553753297}
   m_boneLimb: {fileID: 7061509727007612046}
@@ -3492,6 +3461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 0}
   m_boneMid: {fileID: 0}
   m_boneLimb: {fileID: 1640577896836210366}
@@ -3600,6 +3570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 5445312884479761663}
   m_boneMid: {fileID: 5143674294883160367}
   m_boneLimb: {fileID: 5920681160325224842}
@@ -3723,6 +3694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 2582526858345424144}
   m_boneMid: {fileID: 4404352099462277442}
   m_boneLimb: {fileID: 6389202982872640699}
@@ -3906,6 +3878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 501554612882382937}
   m_boneMid: {fileID: 8885223761135909070}
   m_boneLimb: {fileID: 7385842284514119021}
@@ -4058,6 +4031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 5713684479833285116}
   m_boneMid: {fileID: 7981527492541285851}
   m_boneLimb: {fileID: 1106595258059092954}
@@ -4464,6 +4438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 7121659772359947054}
   m_boneMid: {fileID: 4176272454443488525}
   m_boneLimb: {fileID: 2080859223498895254}
@@ -4616,6 +4591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 4051273092194606692}
   m_boneMid: {fileID: 4778809428965416138}
   m_boneLimb: {fileID: 4673495930329316872}
@@ -4861,6 +4837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 5190623842105820801}
   m_boneMid: {fileID: 5190623842105820801}
   m_boneLimb: {fileID: 2412164847208043235}
@@ -4919,6 +4896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableIK: 1
+  _updateIKHintPos: 1
   m_boneUpper: {fileID: 4172611357755282377}
   m_boneMid: {fileID: 6926309087548954760}
   m_boneLimb: {fileID: 2981534618135257360}
