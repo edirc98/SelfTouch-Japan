@@ -433,6 +433,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1589024470}
+  - {fileID: 2062171514}
   m_Father: {fileID: 1486577053}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1020,6 +1021,7 @@ MonoBehaviour:
   - {fileID: 1913081595}
   - {fileID: 1234968247}
   - {fileID: 1847358867}
+  currentAvatar: {fileID: 0}
 --- !u!1 &144817109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,7 +2001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &317162716
 Transform:
   m_ObjectHideFlags: 0
@@ -2040,6 +2042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScaleButtons: []
   selectedOption: -1
+  lastSelectedOption: -1
 --- !u!1 &329126407
 GameObject:
   m_ObjectHideFlags: 0
@@ -5680,6 +5683,10 @@ MonoBehaviour:
     SDT_Iteration: 0
   question_data:
     QuestionString: 
+    Response: 0
+  aq_data:
+    AvatarShown: 
+    Question: 
     Response: 0
 --- !u!1 &870106695
 GameObject:
@@ -10289,6 +10296,7 @@ MonoBehaviour:
   - Moving rigidly - Mobing elegantly
   QuestionText: {fileID: 163632634}
   QuestionsLoop: {fileID: 50332771}
+  currentQuestion: 
   canConfirm: 0
 --- !u!1 &1606459568
 GameObject:
@@ -12417,6 +12425,63 @@ MonoBehaviour:
   TimerText: {fileID: 1735258383}
   Timer: {fileID: 776991179}
   MoveCharacter: {fileID: 1044908092}
+--- !u!1 &2062171513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062171514}
+  - component: {fileID: 2062171515}
+  m_Layer: 0
+  m_Name: AQ_SaveData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2062171514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062171513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 50332770}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2062171515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062171513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5cd68296ba0a9d4a94303d800d7a0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxTimeOut: 0
+  _pressKeyToFinish: 0
+  _avoidable: 1
+  _instructionsSpanish: []
+  _instructionsEnglish: []
+  _instructionsAudioSource: {fileID: 0}
+  _instructionsVolume: 1
+  _instructionsTimePause: 0.5
+  _guiList: []
+  AntropoQuestion: {fileID: 1589024471}
+  ScaleController: {fileID: 317162717}
+  ShowAvatar: {fileID: 135582985}
+  DataMonitoring: {fileID: 0}
 --- !u!1 &2070172390
 GameObject:
   m_ObjectHideFlags: 0

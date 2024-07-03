@@ -76,7 +76,8 @@ public class ButtonScaleAnimation : MonoBehaviour
             else
             {
                 button.ChangeToSelectedMaterial();
-                ScaleController.selectedOption = id; 
+                ScaleController.selectedOption = id;
+                ScaleController.lastSelectedOption = id;
             } 
                 
         }

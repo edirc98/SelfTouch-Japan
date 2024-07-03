@@ -6,7 +6,8 @@ public class LikertScaleController : MonoBehaviour
 {
     public List<ButtonScaleAnimation> ScaleButtons;
 
-    public int selectedOption = -1; 
+    public int selectedOption = -1;
+    public int lastSelectedOption = -1; 
 
     private void Awake()
     {

@@ -10,6 +10,7 @@ public class AnthropomorphismQuestionaire : QuickStageBase
     public List<string> AnthropomorphismQuestions;
     public TMP_Text QuestionText;
     public QuickStageLoop QuestionsLoop;
+    public string currentQuestion; 
     // Start is called before the first frame update
     public bool canConfirm = false;
     private bool canRespond = false; 
@@ -22,7 +23,8 @@ public class AnthropomorphismQuestionaire : QuickStageBase
     {
         canRespond = true; 
         if (QuestionsLoop.GetCurrentInteration() == QuestionsLoop._numIterations) QuestionsLoop.ResetCurrentIteration(); 
-        QuestionText.text = AnthropomorphismQuestions[QuestionsLoop.GetCurrentInteration()];
+        currentQuestion = AnthropomorphismQuestions[QuestionsLoop.GetCurrentInteration()];
+        QuestionText.text = currentQuestion; 
         return base.CoUpdate(); 
     }
 
