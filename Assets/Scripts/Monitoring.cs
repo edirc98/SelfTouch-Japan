@@ -47,7 +47,24 @@ public class Monitoring : MonoBehaviour
     public AQ_Data aq_data = new AQ_Data();
 
 
-    // Start is called before the first frame update
+    private static string FileDirectory;
+    private static string FileName;
+
+    public void Start()
+    {
+        FileDirectory = Application.persistentDataPath + "/MonitoringData/";
+        FileName = SettingsBase.GetSubjectID().ToString() + ".json";
+    }
+
+    public static string getDirectory()
+    {
+        return FileDirectory; 
+    }
+    public static string getFileName()
+    {
+        return FileName; 
+    }
+
     public void setInitialTime(string stage)
     {
         data.Stage = stage;
@@ -152,42 +169,28 @@ public class Monitoring : MonoBehaviour
         SDT_data.SDT_Character = Character;
         SDT_data.SDT_Distance = distance;
 
-#if UNITY_ANDROID
-        string directory = Application.persistentDataPath + "/MonitoringData/";
-#else
-                string directory = Application.dataPath + "/MonitoringData/";
-
-#endif
-        string FileName = SettingsBase.GetSubjectID().ToString() + ".json";
-        writeDataToJson(directory, FileName, SDT_data);
+        string dir = getDirectory();
+        string name = getFileName(); 
+        writeDataToJson(dir, name, SDT_data);
     }
     public void SaveQuestionData(string questionString, int response)
     {
         question_data.QuestionString = questionString;
-        question_data.Response = response; 
+        question_data.Response = response;
 
-#if UNITY_ANDROID
-        string directory = Application.persistentDataPath + "/MonitoringData/";
-#else
-        string directory = Application.dataPath + "/MonitoringData/";
-
-#endif
-        string FileName = SettingsBase.GetSubjectID().ToString() + ".json";
-        writeDataToJson(directory, FileName, question_data);
+        string dir = getDirectory();
+        string name = getFileName();
+        writeDataToJson(dir, name, question_data);
     }
     public void SaveAQData(string ShownAvatar, string question, int response)
     {
         aq_data.AvatarShown = ShownAvatar;
         aq_data.Question = question;
         aq_data.Response = response;
-#if UNITY_ANDROID
-        string directory = Application.persistentDataPath + "/MonitoringData/";
-#else
-        string directory = Application.persistentDataPath + "/MonitoringData/";
 
-#endif
-        string FileName = SettingsBase.GetSubjectID().ToString() + ".json";
-        writeDataToJson(directory, FileName, aq_data);
+        string dir = getDirectory();
+        string name = getFileName();
+        writeDataToJson(dir, name, aq_data);
 
     }
 }

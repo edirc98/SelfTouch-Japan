@@ -12471,7 +12471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxTimeOut: 0
   _pressKeyToFinish: 0
-  _avoidable: 1
+  _avoidable: 0
   _instructionsSpanish: []
   _instructionsEnglish: []
   _instructionsAudioSource: {fileID: 0}
