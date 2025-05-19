@@ -21,8 +21,11 @@ public class AnthropomorphismQuestionaire : QuickStageBase
 
     protected override IEnumerator CoUpdate()
     {
-        canRespond = true; 
-        if (QuestionsLoop.GetCurrentInteration() == QuestionsLoop._numIterations) QuestionsLoop.ResetCurrentIteration(); 
+        canRespond = true;
+        if (QuestionsLoop.GetCurrentInteration() == QuestionsLoop._numIterations)
+        {
+            QuestionsLoop.ResetCurrentIteration(); 
+        }
         currentQuestion = AnthropomorphismQuestions[QuestionsLoop.GetCurrentInteration()];
         QuestionText.text = currentQuestion; 
         return base.CoUpdate(); 
