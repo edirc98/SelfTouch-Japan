@@ -638,6 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follower: {fileID: 1314631710}
+  activeFollower: 0
+  _followType: 0
   followerOffset: {x: 3, y: 0, z: 0}
-  followType: 1
-  asyncTime: 0.5
+  asyncTime: 3

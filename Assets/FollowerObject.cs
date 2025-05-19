@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FollowerObject : MonoBehaviour
 {
@@ -8,16 +8,17 @@ public class FollowerObject : MonoBehaviour
 
     public enum FollowType
     {
-        SYNC, 
-        ASYNC
+        Sync, 
+        Async
     }
     
     [Header("Follower Object")]
     public GameObject follower;
-    
-    [Header("Follower Object Config")]
+
+    [Header("Follower Object Config")] 
+    public bool activeFollower = false;
+    private FollowType _followType = FollowType.Sync;
     public Vector3 followerOffset;
-    public FollowType followType = FollowType.SYNC;
     public float asyncTime = 3.0f;
 
     
@@ -26,41 +27,67 @@ public class FollowerObject : MonoBehaviour
     private float _startTime = 0.0f;
     #endregion
 
+    #region PROPERTIES
+
+    public FollowType CurrentFollowType
+    {
+        get => _followType;
+        set
+        {
+            if (_followType != value)
+            {
+                _followType = value;
+                //Reset Async Start Time
+                _startTime = 0.0f;
+                _positions.Clear();
+            }
+        }
+    }
+
+
+    #endregion
+    
     #region UNITY METHODS
-    // Start is called before the first frame update
     void Start()
     {
+        
         follower.transform.position = transform.position + followerOffset;
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            ChangeFollowingType(CurrentFollowType == FollowType.Sync ? FollowType.Async : FollowType.Sync);
+        }
+    }
+
     void FixedUpdate()
     {
-        _positions.Add(transform.position);
+        if(activeFollower)_positions.Add(transform.position);
 
-        switch (followType)
+        if (_positions.Count > 0)
         {
-            case FollowType.SYNC:
-                follower.transform.position = _positions[0] + followerOffset;
-                RemoveFirstPosition();
-                break;
-            case FollowType.ASYNC:
-                if (_startTime == 0.0f)
-                {
-                    _startTime = Time.time;
-                }
-
-                if (Time.time > _startTime + asyncTime)
-                {
+            switch (_followType)
+            {
+                case FollowType.Sync:
                     follower.transform.position = _positions[0] + followerOffset;
                     RemoveFirstPosition();
-                }
-                break;
-            default:
-                break;
-        }
+                    break;
+                case FollowType.Async:
+                    if (_startTime == 0.0f)
+                    {
+                        _startTime = Time.time;
+                    }
 
-        
+                    if (Time.time > _startTime + asyncTime)
+                    {
+                        follower.transform.position = _positions[0] + followerOffset;
+                        RemoveFirstPosition();
+                    }
+                    break;
+            }
+        }
     }
     #endregion
 
@@ -74,5 +101,9 @@ public class FollowerObject : MonoBehaviour
         }
     }
 
+    private void ChangeFollowingType(FollowType newFollowType)
+    {
+        CurrentFollowType = newFollowType;
+    }
     #endregion
 }
