@@ -7,7 +7,7 @@ public class AQShowInstructions : QuickStageBase
 {
     public GameObject AQ_Scale;
     public GameObject AQ_Instructions;
-
+    
     protected override void Start()
     {
         base.Start();

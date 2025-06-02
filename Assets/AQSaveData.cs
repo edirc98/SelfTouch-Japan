@@ -23,7 +23,7 @@ public class AQSaveData : QuickStageBase
     // Update is called once per frame
     protected override IEnumerator CoUpdate()
     {
-        DataMonitoring.SaveAQData(ShowAvatar.currentAvatar.ToString(), AntropoQuestion.currentQuestion, ScaleController.lastSelectedOption); 
+        DataMonitoring.SaveAqData(ShowAvatar.currentAvatar.ToString(), AntropoQuestion.currentQuestion, ScaleController.lastSelectedOption); 
 
         return base.CoUpdate();
     }

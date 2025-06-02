@@ -4220,6 +4220,10 @@ MonoBehaviour:
   question_data:
     QuestionString: 
     Response: 0
+  aq_data:
+    AvatarShown: 
+    Question: 
+    Response: 0
 --- !u!1 &872464098
 GameObject:
   m_ObjectHideFlags: 0
@@ -7244,7 +7248,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9031091029678803836, guid: 5e8d34b5722edd84287e2790e01e81e4, type: 3}
       propertyPath: portName
-      value: COM8
+      value: COM10
       objectReference: {fileID: 0}
     - target: {fileID: 9031091029678803836, guid: 5e8d34b5722edd84287e2790e01e81e4, type: 3}
       propertyPath: m_Enabled

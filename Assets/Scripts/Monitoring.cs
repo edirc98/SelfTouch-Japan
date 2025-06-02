@@ -53,35 +53,40 @@ public class Monitoring : MonoBehaviour
     public void Start()
     {
         FileDirectory = Application.persistentDataPath + "/MonitoringData/";
-        FileName = SettingsBase.GetSubjectID().ToString() + ".json";
+        FileName = GetDate() + "_" + SettingsBase.GetSubjectID() + ".json";
     }
 
-    public static string getDirectory()
+    public static string GetDirectory()
     {
         return FileDirectory; 
     }
-    public static string getFileName()
+    public static string GetFileName()
     {
         return FileName; 
     }
 
-    public void setInitialTime(string stage)
+    public void SetInitialTime(string stage)
     {
         data.Stage = stage;
         data.InitTime = System.DateTime.Now;
         data.Time = data.InitTime.ToString("dd-MM-yyyy-HH-mm-ss");
     }
-    public string getInitTime()
+    public string GetInitTime()
     {
         return data.InitTime.ToString("dd-MM-yyyy");
     }
-    public void setDuration()
+
+    public string GetDate()
+    {
+        return System.DateTime.Now.ToString("dd-MM-yyyy");
+    }
+    public void SetDuration()
     {
         var now = System.DateTime.Now;
         var diff = now - data.InitTime;
         data.SesionDuration = diff.Seconds;
     }
-    public void writeDataToJson(string directory, string name, MonitoringData data)
+    public void WriteDataToJson(string directory, string name, MonitoringData data)
     {
         if (!Directory.Exists(directory))
         {
@@ -98,7 +103,7 @@ public class Monitoring : MonoBehaviour
         }
         File.AppendAllText(directory + name, "\n");
     }
-    public void writeDataToJson(string directory, string name, SDT_Data data)
+    public void WriteDataToJson(string directory, string name, SDT_Data data)
     {
         if (!Directory.Exists(directory))
         {
@@ -115,7 +120,7 @@ public class Monitoring : MonoBehaviour
         }
         File.AppendAllText(directory + name, "\n");
     }
-    public void writeDataToJson(string directory, string name, Question_Data data)
+    public void WriteDataToJson(string directory, string name, Question_Data data)
     {
         if (!Directory.Exists(directory))
         {
@@ -132,7 +137,7 @@ public class Monitoring : MonoBehaviour
         }
         File.AppendAllText(directory + name, "\n");
     }
-    public void writeDataToJson(string directory, string name, AQ_Data data)
+    public void WriteDataToJson(string directory, string name, AQ_Data data)
     {
         if (!Directory.Exists(directory))
         {
@@ -152,7 +157,7 @@ public class Monitoring : MonoBehaviour
 
     public void SaveData(string stage)
     {
-        setInitialTime(stage);
+        SetInitialTime(stage);
 #if UNITY_ANDROID
         string directory = Application.persistentDataPath + "/MonitoringData/";
 #else
@@ -160,37 +165,37 @@ public class Monitoring : MonoBehaviour
 
 #endif 
         string FileName = SettingsBase.GetSubjectID().ToString() + ".json";
-        writeDataToJson(directory, FileName, data);
+        WriteDataToJson(directory, FileName, data);
     }
 
-    public void SaveSDTData(string EmbodiedGender, int iter, string Character, float distance) {
+    public void SaveSdtData(string EmbodiedGender, int iter, string Character, float distance) {
         SDT_data.SDT_EmbodiedGender = EmbodiedGender;
         SDT_data.SDT_Iteration = iter;
         SDT_data.SDT_Character = Character;
         SDT_data.SDT_Distance = distance;
 
-        string dir = getDirectory();
-        string name = getFileName(); 
-        writeDataToJson(dir, name, SDT_data);
+        string dir = GetDirectory();
+        string name = GetFileName(); 
+        WriteDataToJson(dir, name, SDT_data);
     }
     public void SaveQuestionData(string questionString, int response)
     {
         question_data.QuestionString = questionString;
         question_data.Response = response;
 
-        string dir = getDirectory();
-        string name = getFileName();
-        writeDataToJson(dir, name, question_data);
+        string dir = GetDirectory();
+        string name = GetFileName();
+        WriteDataToJson(dir, name, question_data);
     }
-    public void SaveAQData(string ShownAvatar, string question, int response)
+    public void SaveAqData(string ShownAvatar, string question, int response)
     {
         aq_data.AvatarShown = ShownAvatar;
         aq_data.Question = question;
         aq_data.Response = response;
 
-        string dir = getDirectory();
-        string name = getFileName();
-        writeDataToJson(dir, name, aq_data);
+        string dir = GetDirectory();
+        string name = GetFileName();
+        WriteDataToJson(dir, name, aq_data);
 
     }
 }

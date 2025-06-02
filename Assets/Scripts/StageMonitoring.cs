@@ -27,11 +27,11 @@ public class StageMonitoring : QuickStageBase
         iter = MainLoop.GetCurrentInteration();
         if (isTouchScene)
         {
-            DataMonitoring.SaveSDTData("Touch SDT; " + SettingsBase.GetGender().ToString(), iter, CharacterSelectedInTouch.SelectedCharacter.name, CharacterSelectedInTouch.SelectedCharacter.transform.position.z);
+            DataMonitoring.SaveSdtData("Touch SDT; " + SettingsBase.GetGender().ToString(), iter, CharacterSelectedInTouch.SelectedCharacter.name, CharacterSelectedInTouch.SelectedCharacter.transform.position.z);
         }
         else
         {
-            DataMonitoring.SaveSDTData(SettingsBase.GetGender().ToString(), iter, CharacterSelection.SelectedCharacter.name, CharacterSelection.SelectedCharacter.transform.position.z);
+            DataMonitoring.SaveSdtData(SettingsBase.GetGender().ToString(), iter, CharacterSelection.SelectedCharacter.name, CharacterSelection.SelectedCharacter.transform.position.z);
         }
         
         return base.CoUpdate();
