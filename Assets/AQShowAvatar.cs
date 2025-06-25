@@ -8,6 +8,7 @@ public class AQShowAvatar : QuickStageBase
     public QuickStageLoop AvatarsLoop; 
     public List<GameObject> AQAvatars;
     public GameObject currentAvatar; 
+    
     protected override void Start()
     {
         base.Start();

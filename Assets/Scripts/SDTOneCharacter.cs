@@ -16,6 +16,9 @@ public class SDTOneCharacter : QuickStageBase
     public QuickStageLoop MainLoop;
     public StageSetConditionsOrder Conditions;
     
+    public bool canSkipByDistance; 
+
+    
     protected override IEnumerator CoUpdate()
     {
 

@@ -5,7 +5,8 @@ using UnityEngine;
 public class MoveOneCharacter : MonoBehaviour
 {
     public SDTOneCharacter CharacterSelection;
-    public STDMoveOneCharacter moveCharacter;
+    public SDTMoveOneCharacter moveCharacter;
+
 
     public bool isMoving = false;
 
@@ -25,5 +26,19 @@ public class MoveOneCharacter : MonoBehaviour
     {
         moveCharacter.Finish();
         CharacterSelection.SelectedCharacterAnimator = null;
+    }
+    
+    private void Update()
+    {
+        if(CharacterSelection.SelectedCharacter != null && CharacterSelection.canSkipByDistance)
+        {
+            if (CharacterSelection.SelectedCharacter.transform.position.z < 1.0f)
+            {
+                CharacterSelection.canSkipByDistance = false; 
+                StopCharacter();
+                ConfirmDistance();
+            }
+        }
+        
     }
 }

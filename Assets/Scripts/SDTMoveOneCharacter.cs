@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using QuickVR;
 
-public class STDMoveOneCharacter : QuickStageBase
+public class SDTMoveOneCharacter : QuickStageBase
 {
     public GameObject walkButton;
     public GameObject confirmButton;

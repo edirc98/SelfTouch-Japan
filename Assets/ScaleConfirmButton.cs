@@ -13,6 +13,7 @@ public class ScaleConfirmButton : MonoBehaviour
     private bool presed = false;
 
     public AnthropomorphismQuestionaire AntropoQuestion;
+    public EmbodimentQuestionaire EmbodimentQuestion;
     public LikertScaleController ScaleController; 
 
     // Start is called before the first frame update
@@ -32,7 +33,8 @@ public class ScaleConfirmButton : MonoBehaviour
             {
                 if(ScaleController.selectedOption != -1)
                 {
-                    AntropoQuestion.canConfirm = true; 
+                    if(AntropoQuestion)AntropoQuestion.canConfirm = true; 
+                    if(EmbodimentQuestion)EmbodimentQuestion.canConfirm = true;
                     AntropoQuestion.Confirm();
                     ScaleController.ResetButtonsToIdle();
                     ScaleController.ResetSelectedOption(); 
