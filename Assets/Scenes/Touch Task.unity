@@ -3504,10 +3504,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 428152536}
-  _showControlsBody: 0
+  _showControlsBody: 1
   _showControlsFingersLeftHand: 0
   _showControlsFingersRightHand: 0
-  _showControlsFace: 1
+  _showControlsFace: 0
   _isInitialized: 1
   _gestureSettingsLeftHand: {fileID: 0}
   _gestureSettingsRightHand: {fileID: 0}
@@ -4497,7 +4497,7 @@ MonoBehaviour:
     ConditionTouchType: 1
   - AvatarBodyType: 0
     ConditionTouchType: 1
-  - AvatarBodyType: 2
+  - AvatarBodyType: 3
     ConditionTouchType: 0
   - AvatarBodyType: 1
     ConditionTouchType: 1
@@ -8084,7 +8084,7 @@ GameObject:
   - component: {fileID: 1274735603}
   m_Layer: 0
   m_Name: _IKTarget_RightHand
-  m_TagString: Untagged
+  m_TagString: Follower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14773,10 +14773,15 @@ MonoBehaviour:
   MainLoop: {fileID: 1359409314}
   Conditions: {fileID: 557449943}
   avatarOffsets:
-  - AvatarName: Human
+  - AvatarName: Male
     LeftHandPosOffset: {x: 0, y: 1.21, z: 0.25}
     LefthHandRotOffset: {x: 0, y: 0, z: 7}
     RightHandPosOffset: {x: -0.035, y: 0.162, z: -0.15}
+    RightHandRotOffset: {x: 0, y: 0, z: 0}
+  - AvatarName: Female
+    LeftHandPosOffset: {x: 0, y: 1.23, z: 0.22}
+    LefthHandRotOffset: {x: 0, y: 0, z: 5}
+    RightHandPosOffset: {x: 0.04, y: 0.16, z: -0.14}
     RightHandRotOffset: {x: 0, y: 0, z: 0}
   - AvatarName: Robot
     LeftHandPosOffset: {x: 0, y: 1.26, z: 0.22}

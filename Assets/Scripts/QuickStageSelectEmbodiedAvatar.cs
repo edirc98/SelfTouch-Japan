@@ -55,8 +55,8 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 HumanFemaleAvatar.gameObject.SetActive(false);
                 break;
             case Condition.BodyType.HumanFemale:
-                SetLeftHandOffset(avatarOffsets[0].LeftHandPosOffset, avatarOffsets[0].LefthHandRotOffset); 
-                SetRightHandOffset(avatarOffsets[0].RightHandPosOffset, avatarOffsets[0].RightHandRotOffset); 
+                SetLeftHandOffset(avatarOffsets[1].LeftHandPosOffset, avatarOffsets[1].LefthHandRotOffset); 
+                SetRightHandOffset(avatarOffsets[1].RightHandPosOffset, avatarOffsets[1].RightHandRotOffset); 
 
                 HumanFemaleAvatar.gameObject.SetActive(true);
                 _vrManager.SetAnimatorTarget(HumanFemaleAvatar);
@@ -65,8 +65,8 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 HumanMaleAvatar.gameObject.SetActive(false);
                 break;
             case Condition.BodyType.Treent:
-                SetLeftHandOffset(avatarOffsets[2].LeftHandPosOffset, avatarOffsets[0].LefthHandRotOffset);
-                SetRightHandOffset(avatarOffsets[2].RightHandPosOffset, avatarOffsets[0].RightHandRotOffset);
+                SetLeftHandOffset(avatarOffsets[3].LeftHandPosOffset, avatarOffsets[3].LefthHandRotOffset);
+                SetRightHandOffset(avatarOffsets[3].RightHandPosOffset, avatarOffsets[3].RightHandRotOffset);
 
                 TreeentAvatar.gameObject.SetActive(true);
                 _vrManager.SetAnimatorTarget(TreeentAvatar);
@@ -75,8 +75,8 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 RobotAvatar.gameObject.SetActive(false);
                 break;
             case Condition.BodyType.Robot:
-                SetLeftHandOffset(avatarOffsets[1].LeftHandPosOffset, avatarOffsets[0].LefthHandRotOffset);
-                SetRightHandOffset(avatarOffsets[1].RightHandPosOffset, avatarOffsets[0].RightHandRotOffset);
+                SetLeftHandOffset(avatarOffsets[2].LeftHandPosOffset, avatarOffsets[2].LefthHandRotOffset);
+                SetRightHandOffset(avatarOffsets[2].RightHandPosOffset, avatarOffsets[2].RightHandRotOffset);
 
                 RobotAvatar.gameObject.SetActive(true);
                 _vrManager.SetAnimatorTarget(RobotAvatar);
