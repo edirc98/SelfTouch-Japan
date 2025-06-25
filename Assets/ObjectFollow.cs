@@ -22,15 +22,19 @@ public class ObjectFollow : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (applyPosition)
+        if (FollowerObject)
         {
-            FollowerObject.transform.position = transform.position + PosOffset;
+            if (applyPosition)
+            {
+                FollowerObject.transform.position = transform.position + PosOffset;
+            }
+            if (applyRotation)
+            {
+                Quaternion rotOffsetQuat = Quaternion.Euler(RotOffset);
+                FollowerObject.transform.rotation = new Quaternion(transform.rotation.x, 0, 0, 1);
+            }
         }
-        if (applyRotation)
-        {
-            Quaternion rotOffsetQuat = Quaternion.Euler(RotOffset);
-            FollowerObject.transform.rotation = new Quaternion(transform.rotation.x, 0, 0, 1);
-        }
+        
         
     }
 

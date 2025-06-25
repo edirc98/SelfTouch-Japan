@@ -9,7 +9,8 @@ public class Condition
 {
     public enum BodyType
     {
-        Human, 
+        HumanMale,
+        HumanFemale,
         Treent, 
         Robot
     }; 

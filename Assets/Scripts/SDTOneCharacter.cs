@@ -8,25 +8,24 @@ public class SDTOneCharacter : QuickStageBase
     public GameObject TreentAvatar;
     public GameObject RobotAvatar;
     public GameObject MaleAvatar;
+    public GameObject FemaleAvatar;
 
     public GameObject SelectedCharacter;
     public Animator SelectedCharacterAnimator;
 
     public QuickStageLoop MainLoop;
     public StageSetConditionsOrder Conditions;
-
-    protected override void Start()
-    {
-        base.Start();
-    }
-
+    
     protected override IEnumerator CoUpdate()
     {
 
         switch (Conditions.CurrentConditions[MainLoop.GetCurrentInteration()].AvatarBodyType)
         {
-            case Condition.BodyType.Human:
+            case Condition.BodyType.HumanMale:
                 SelectedCharacter = MaleAvatar;
+                break;
+            case Condition.BodyType.HumanFemale:
+                SelectedCharacter = FemaleAvatar;
                 break;
             case Condition.BodyType.Treent:
                 SelectedCharacter = TreentAvatar;
