@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using QuickVR;
 
-public class AQSaveData : QuickStageBase
+public class StageLog : QuickStageBase
 {
-    public AnthropomorphismQuestionaire AntropoQuestion;
-    public LikertScaleController ScaleController; 
-    public AQShowAvatar ShowAvatar; 
+    public string Log; 
     [HideInInspector]
     public Monitoring DataMonitoring;
 
@@ -20,7 +18,7 @@ public class AQSaveData : QuickStageBase
     // Update is called once per frame
     protected override IEnumerator CoUpdate()
     {
-        DataMonitoring.SaveAqData(ShowAvatar.currentAvatar.ToString(), AntropoQuestion.currentQuestion, ScaleController.lastSelectedOption); 
+        DataMonitoring.SaveLogData(Log);
 
         return base.CoUpdate();
     }

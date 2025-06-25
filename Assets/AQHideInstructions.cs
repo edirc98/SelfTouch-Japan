@@ -10,8 +10,8 @@ public class AQHideInstructions : QuickStageBase
 
     protected override IEnumerator CoUpdate()
     {
-        AQ_Scale.SetActive(false);
-        AQ_Avatar.currentAvatar.gameObject.SetActive(false);
+        if(AQ_Scale) AQ_Scale.SetActive(false);
+        if(AQ_Avatar) AQ_Avatar.currentAvatar.gameObject.SetActive(false);
         return base.CoUpdate();
     }
 }

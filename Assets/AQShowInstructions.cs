@@ -15,14 +15,16 @@ public class AQShowInstructions : QuickStageBase
 
     protected override IEnumerator CoUpdate()
     {
-        AQ_Scale.SetActive(true);
-        AQ_Instructions.SetActive(true);
+        
+        
+        if (AQ_Scale)AQ_Scale.SetActive(true);
+        if (AQ_Instructions)AQ_Instructions.SetActive(true);
         return base.CoUpdate();
     }
 
     public override void Finish()
     {
-        AQ_Instructions.SetActive(false);
+        if(AQ_Instructions) AQ_Instructions.SetActive(false);
         base.Finish();
     }
 }

@@ -10,10 +10,16 @@ public class MonitoringData
     public string Gender;
     public string Stage;
     public string Time;
-    public System.DateTime InitTime;
     public float SesionDuration;
-
+    
 }
+
+public class LogData
+{
+    public string Stage;
+    public string Time;
+}
+
 [System.Serializable]
 public class SDT_Data
 {
@@ -45,6 +51,7 @@ public class Monitoring : MonoBehaviour
     public SDT_Data SDT_data = new SDT_Data();
     public Question_Data question_data = new Question_Data();
     public AQ_Data aq_data = new AQ_Data();
+    public LogData log_data = new LogData();
 
 
     private static string FileDirectory;
@@ -68,25 +75,33 @@ public class Monitoring : MonoBehaviour
     public void SetInitialTime(string stage)
     {
         data.Stage = stage;
-        data.InitTime = System.DateTime.Now;
-        data.Time = data.InitTime.ToString("dd-MM-yyyy-HH-mm-ss");
+        data.Time = System.DateTime.Now.ToString("HH-mm-ss");
     }
-    public string GetInitTime()
-    {
-        return data.InitTime.ToString("dd-MM-yyyy");
-    }
+
 
     public string GetDate()
     {
         return System.DateTime.Now.ToString("dd-MM-yyyy");
     }
-    public void SetDuration()
-    {
-        var now = System.DateTime.Now;
-        var diff = now - data.InitTime;
-        data.SesionDuration = diff.Seconds;
-    }
+    
     public void WriteDataToJson(string directory, string name, MonitoringData data)
+    {
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+        string outputData = JsonUtility.ToJson(data);
+        if (!File.Exists(directory + name))
+        {
+            File.WriteAllText(directory + name, outputData);
+        }
+        else
+        {
+            File.AppendAllText(directory + name, outputData);
+        }
+        File.AppendAllText(directory + name, "\n");
+    }
+    public void WriteDataToJson(string directory, string name, LogData data)
     {
         if (!Directory.Exists(directory))
         {
@@ -155,17 +170,15 @@ public class Monitoring : MonoBehaviour
         File.AppendAllText(directory + name, "\n");
     }
 
-    public void SaveData(string stage)
-    {
-        SetInitialTime(stage);
-#if UNITY_ANDROID
-        string directory = Application.persistentDataPath + "/MonitoringData/";
-#else
-        string directory = Application.dataPath + "/MonitoringData/";
 
-#endif 
-        string FileName = SettingsBase.GetSubjectID().ToString() + ".json";
-        WriteDataToJson(directory, FileName, data);
+    public void SaveLogData(string Log)
+    {
+        log_data.Stage = Log; 
+        log_data.Time = System.DateTime.Now.ToString("HH-mm-ss");
+        
+        string dir = GetDirectory();
+        string name = GetFileName(); 
+        WriteDataToJson(dir, name, log_data);
     }
 
     public void SaveSdtData(string EmbodiedGender, int iter, string Character, float distance) {

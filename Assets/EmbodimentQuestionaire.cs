@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using QuickVR;
-using UnityEngine.UI;
-using TMPro; 
+using TMPro;
 
-public class AnthropomorphismQuestionaire : QuickStageBase
+[System.Serializable]
+public struct EmboQuestion
 {
-    public List<string> AnthropomorphismQuestions;
+    public string Question;
+    public string PosClue;
+    public string NegClue;
+}
+public class EmbodimentQuestionaire : QuickStageBase
+{
+    public List<EmboQuestion> EmbodimentQuestions;
     public TMP_Text QuestionText;
+    public TMP_Text NegativeClueText;
+    public TMP_Text PositiveClueText;
     public QuickStageLoop QuestionsLoop;
-    public string currentQuestion; 
+    public EmboQuestion currentQuestion; 
     
     public bool canConfirm = false;
     private bool canRespond = false; 
@@ -26,8 +33,10 @@ public class AnthropomorphismQuestionaire : QuickStageBase
         {
             QuestionsLoop.ResetCurrentIteration(); 
         }
-        currentQuestion = AnthropomorphismQuestions[QuestionsLoop.GetCurrentInteration()];
-        QuestionText.text = currentQuestion; 
+        currentQuestion = EmbodimentQuestions[QuestionsLoop.GetCurrentInteration()];
+        QuestionText.text = currentQuestion.Question; 
+        NegativeClueText.text = currentQuestion.NegClue;
+        PositiveClueText.text = currentQuestion.PosClue;
         return base.CoUpdate(); 
     }
 
