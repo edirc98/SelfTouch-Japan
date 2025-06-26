@@ -13,6 +13,7 @@ public struct EmboQuestion
 public class EmbodimentQuestionaire : QuickStageBase
 {
     public List<EmboQuestion> EmbodimentQuestions;
+    public TMP_Text QuestionStartText;
     public TMP_Text QuestionText;
     public TMP_Text NegativeClueText;
     public TMP_Text PositiveClueText;
@@ -28,6 +29,7 @@ public class EmbodimentQuestionaire : QuickStageBase
 
     protected override IEnumerator CoUpdate()
     {
+        QuestionStartText.text = "Respond the following question:";
         canRespond = true;
         if (QuestionsLoop.GetCurrentInteration() == QuestionsLoop._numIterations)
         {
