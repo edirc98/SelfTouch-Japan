@@ -33,9 +33,19 @@ public class ScaleConfirmButton : MonoBehaviour
             {
                 if(ScaleController.selectedOption != -1)
                 {
-                    if(AntropoQuestion)AntropoQuestion.canConfirm = true; 
-                    if(EmbodimentQuestion)EmbodimentQuestion.canConfirm = true;
-                    AntropoQuestion.Confirm();
+                    if (AntropoQuestion)
+                    {
+                        AntropoQuestion.canConfirm = true;
+                        AntropoQuestion.Confirm();
+                    }
+
+                    if (EmbodimentQuestion)
+                    {
+                        EmbodimentQuestion.canConfirm = true;
+                        EmbodimentQuestion.Confirm();
+                    }
+                    
+                    
                     ScaleController.ResetButtonsToIdle();
                     ScaleController.ResetSelectedOption(); 
                 }

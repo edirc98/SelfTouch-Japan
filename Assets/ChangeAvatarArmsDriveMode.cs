@@ -30,6 +30,7 @@ public class ChangeAvatarArmsDriveMode : QuickStageBase
             case ArmDriveMode.TRACKING:
                 MasterAvatarController.SetIKControl(IKBone.LeftHand, QuickUnityVR.ControlType.Tracking);
                 MasterAvatarController.SetIKControl(IKBone.RightHand, QuickUnityVR.ControlType.Tracking);
+                SetRightHandToIK(); //Set the hand in IK pos when hand is in Tracking
                 break;
             case ArmDriveMode.IK:
                 MasterAvatarController.SetIKControl(IKBone.LeftHand, QuickUnityVR.ControlType.IK);
@@ -41,5 +42,14 @@ public class ChangeAvatarArmsDriveMode : QuickStageBase
                 break;
         }
         return base.CoUpdate();
+    }
+
+    private void SetRightHandToIK()
+    {
+        MasterAvatarController.SetIKControl(IKBone.RightThumbDistal, QuickUnityVR.ControlType.IK);
+        MasterAvatarController.SetIKControl(IKBone.RightIndexDistal, QuickUnityVR.ControlType.IK);
+        MasterAvatarController.SetIKControl(IKBone.RightRingDistal, QuickUnityVR.ControlType.IK);
+        MasterAvatarController.SetIKControl(IKBone.RightMiddleDistal, QuickUnityVR.ControlType.IK);
+        MasterAvatarController.SetIKControl(IKBone.RightLittleDistal, QuickUnityVR.ControlType.IK);
     }
 }

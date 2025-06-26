@@ -4635,6 +4635,7 @@ MonoBehaviour:
   _guiList: []
   AQ_Scale: {fileID: 317162715}
   AQ_Avatar: {fileID: 135582985}
+  AQ_AvatarCondition: {fileID: 0}
 --- !u!1 &797588465
 GameObject:
   m_ObjectHideFlags: 0
@@ -7878,7 +7879,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229005708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.426, z: 0.305}
+  m_LocalPosition: {x: 0, y: 1.426, z: -0.434}
   m_LocalScale: {x: 0.1, y: 0.05, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10694,6 +10695,7 @@ MonoBehaviour:
   _instructionsTimePause: 0.5
   _guiList: []
   AQ_Scale: {fileID: 317162715}
+  QuestionText: {fileID: 0}
   AQ_Instructions: {fileID: 1118082462}
 --- !u!1 &2001300584
 GameObject:
@@ -10950,6 +10952,8 @@ MonoBehaviour:
   AntropoQuestion: {fileID: 1589024471}
   ScaleController: {fileID: 317162717}
   ShowAvatar: {fileID: 135582985}
+  ShowAvatarCondition: {fileID: 0}
+  isCondition: 0
   DataMonitoring: {fileID: 0}
 --- !u!1 &2070172390
 GameObject:
@@ -14167,7 +14171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 6703593162170673937}
-  _showControlsBody: 0
+  _showControlsBody: 1
   _showControlsFingersLeftHand: 0
   _showControlsFingersRightHand: 0
   _showControlsFace: 1
