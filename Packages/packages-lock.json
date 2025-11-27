@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.quickvr.quickbase": {
-      "version": "file:C:/Users/edirc/Documents/Unity Projects Repos/EventLabPackages/QuickVR/com.quickvr.quickbase",
+      "version": "file:../../EventLabPackages/QuickVR/com.quickvr.quickbase",
       "depth": 0,
       "source": "local",
       "dependencies": {

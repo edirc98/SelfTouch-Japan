@@ -229,8 +229,6 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: 
   features:
-  - {fileID: -5695384227379964131}
-  - {fileID: -3882316550355985009}
   - {fileID: 182283158425807604}
   - {fileID: 2676025235069104911}
   - {fileID: 759684829228268010}
@@ -243,6 +241,7 @@ MonoBehaviour:
   - {fileID: -7087854378644954893}
   - {fileID: 8884250222360670931}
   - {fileID: -4527304399711805082}
+  - {fileID: -5695384227379964131}
   - {fileID: -1589624994813584341}
   - {fileID: 7888672072207210147}
   - {fileID: -1503093213876809570}
@@ -251,6 +250,7 @@ MonoBehaviour:
   - {fileID: -6310809246860316688}
   - {fileID: -4252523765456448892}
   - {fileID: 9089589217812494767}
+  - {fileID: -3882316550355985009}
   - {fileID: 5258910264270599368}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
@@ -259,6 +259,26 @@ MonoBehaviour:
   m_depthSubmissionMode: 0
   m_optimizeBufferDiscards: 0
   m_symmetricProjection: 0
+--- !u!114 &-4708191167790743987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7365b139f7aec43b23d26b7a48b5a6, type: 3}
+  m_Name: MetaQuestTouchPlusControllerProfile Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: 
+  version: 
+  featureIdInternal: 
+  openxrExtensionStrings: 
+  company: 
+  priority: 0
+  required: 0
 --- !u!114 &-4527304399711805082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +533,26 @@ MonoBehaviour:
   featureIdInternal: com.unity.openxr.feature.input.handtracking
   openxrExtensionStrings: XR_MSFT_hand_interaction
   company: Unity
+  priority: 0
+  required: 0
+--- !u!114 &-743942677720312557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b213d3e3c7f3109449eb46a4c8ee42f0, type: 3}
+  m_Name: XrPerformanceSettingsFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: 
+  version: 
+  featureIdInternal: 
+  openxrExtensionStrings: 
+  company: 
   priority: 0
   required: 0
 --- !u!114 &-358470853436826318
