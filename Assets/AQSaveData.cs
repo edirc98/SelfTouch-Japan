@@ -24,12 +24,12 @@ public class AQSaveData : QuickStageBase
     {
         if (isCondition)
         {
-            DataMonitoring.SaveAqData(ShowAvatarCondition.currentAvatar.ToString(), AntropoQuestion.currentQuestion, ScaleController.lastSelectedOption); 
+            //DataMonitoring.SaveAqData(ShowAvatarCondition.currentAvatar.ToString(), AntropoQuestion.currentQuestion, ScaleController.lastSelectedOption); 
 
         }
         else
         {
-            DataMonitoring.SaveAqData(ShowAvatar.currentAvatar.ToString(), AntropoQuestion.currentQuestion, ScaleController.lastSelectedOption); 
+           // DataMonitoring.SaveAqData(ShowAvatar.currentAvatar.ToString(), AntropoQuestion.currentQuestion, ScaleController.lastSelectedOption); 
         }
 
         return base.CoUpdate();

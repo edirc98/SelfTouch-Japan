@@ -19,7 +19,7 @@ public class EMBOSaveData : QuickStageBase
     // Update is called once per frame
     protected override IEnumerator CoUpdate()
     {
-        DataMonitoring.SaveQuestionData(embodimentQuestion.currentQuestion.Question, ScaleController.lastSelectedOption); 
+        //ataMonitoring.SaveQuestionData(embodimentQuestion.currentQuestion.Question, ScaleController.lastSelectedOption); 
 
         return base.CoUpdate();
     }

@@ -6,10 +6,10 @@ using QuickVR;
 public class QuickStageSelectAvatarGender : QuickStageBase
 {
     [Header("Avatar Source Animator")]
-    public Animator MasterAvatarAnimator;
+    public Animator masterAvatarAnimator;
     [Header("Target Avatars Animators")]
-    public Animator MaleAvatarAnimator;
-    public Animator FemaleAvatarAnimator;
+    public Animator maleAvatarAnimator;
+    public Animator femaleAvatarAnimator;
 
 
     private QuickVRManager _vrManager
@@ -23,16 +23,16 @@ public class QuickStageSelectAvatarGender : QuickStageBase
     {
         if (SettingsBase.GetGender() == SettingsBase.Genders.Male)
         {
-            if (MaleAvatarAnimator.gameObject.activeSelf == false) MaleAvatarAnimator.gameObject.SetActive(true);
-            _vrManager.SetAnimatorTarget(MaleAvatarAnimator);
-            FemaleAvatarAnimator.gameObject.SetActive(false);
+            if (maleAvatarAnimator.gameObject.activeSelf == false) maleAvatarAnimator.gameObject.SetActive(true);
+            _vrManager.SetAnimatorTarget(maleAvatarAnimator);
+            femaleAvatarAnimator.gameObject.SetActive(false);
             Debug.Log("MALE selected as Target Avatar");
         }
         else
         {
-            if (FemaleAvatarAnimator.gameObject.activeSelf == false) FemaleAvatarAnimator.gameObject.SetActive(true);
-            _vrManager.SetAnimatorTarget(FemaleAvatarAnimator);
-            MaleAvatarAnimator.gameObject.SetActive(false);
+            if (femaleAvatarAnimator.gameObject.activeSelf == false) femaleAvatarAnimator.gameObject.SetActive(true);
+            _vrManager.SetAnimatorTarget(femaleAvatarAnimator);
+            maleAvatarAnimator.gameObject.SetActive(false);
             Debug.Log("FEMALE selected as Target Avatar");
         }
 

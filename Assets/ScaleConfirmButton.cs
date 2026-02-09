@@ -31,7 +31,7 @@ public class ScaleConfirmButton : MonoBehaviour
             presed = true;
             if (other.CompareTag("Hand"))
             {
-                if(ScaleController.selectedOption != -1)
+                /**if(ScaleController.selectedOption != -1)
                 {
                     if (AntropoQuestion)
                     {
@@ -46,9 +46,9 @@ public class ScaleConfirmButton : MonoBehaviour
                     }
                     
                     
-                    ScaleController.ResetButtonsToIdle();
-                    ScaleController.ResetSelectedOption(); 
-                }
+                    //ScaleController.ResetButtonsToIdle();
+                    //ScaleController.ResetSelectedOption(); 
+                }**/
                 ButtonAnimator.SetTrigger("PressButton");
                 ButtonSound.Play();
             }

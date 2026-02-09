@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using QuickVR;
 
 
@@ -9,8 +7,7 @@ public class Condition
 {
     public enum BodyType
     {
-        HumanMale,
-        HumanFemale,
+        Human,
         Treent, 
         Robot
     }; 
@@ -20,16 +17,10 @@ public class Condition
         Sync
     }
 
-    public BodyType AvatarBodyType;
-    public TouchType ConditionTouchType; 
+    public BodyType avatarBodyType;
+    public TouchType conditionTouchType; 
 }
 public class StageSetConditionsOrder : QuickStageBase
 {
-    public List<Condition> CurrentConditions;
-
-    protected override void Start()
-    {
-        //can be added to read a csv file and add to the CurrentConditions the corresponding random order. 
-        base.Start();
-    }
+    public List<Condition> currentConditions;
 }

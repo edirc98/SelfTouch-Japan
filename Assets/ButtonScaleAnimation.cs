@@ -66,7 +66,7 @@ public class ButtonScaleAnimation : MonoBehaviour
 
     public void SelectButton()
     {
-        foreach(ButtonScaleAnimation button in ScaleController.ScaleButtons)
+        /**foreach(ButtonScaleAnimation button in ScaleController.ScaleButtons)
         {
             if (button.id != id)
             {
@@ -80,6 +80,6 @@ public class ButtonScaleAnimation : MonoBehaviour
                 ScaleController.lastSelectedOption = id;
             } 
                 
-        }
+        }**/
     }
 }

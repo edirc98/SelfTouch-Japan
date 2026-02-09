@@ -12,13 +12,10 @@ public class AQShowAvatarCondition : QuickStageBase
 
     protected override IEnumerator CoUpdate()
     {
-        switch (ConditionsOrder.CurrentConditions[MainLoop.GetCurrentInteration()].AvatarBodyType)
+        switch (ConditionsOrder.currentConditions[MainLoop.GetCurrentInteration()].avatarBodyType)
         {
-            case Condition.BodyType.HumanMale:
+            case Condition.BodyType.Human:
                 currentAvatar = AQAvatars[0];
-                break;
-            case Condition.BodyType.HumanFemale:
-                currentAvatar = AQAvatars[1];
                 break;
             case Condition.BodyType.Treent:
                 currentAvatar = AQAvatars[2];

@@ -22,13 +22,10 @@ public class SDTOneCharacter : QuickStageBase
     protected override IEnumerator CoUpdate()
     {
 
-        switch (Conditions.CurrentConditions[MainLoop.GetCurrentInteration()].AvatarBodyType)
+        switch (Conditions.currentConditions[MainLoop.GetCurrentInteration()].avatarBodyType)
         {
-            case Condition.BodyType.HumanMale:
+            case Condition.BodyType.Human:
                 SelectedCharacter = MaleAvatar;
-                break;
-            case Condition.BodyType.HumanFemale:
-                SelectedCharacter = FemaleAvatar;
                 break;
             case Condition.BodyType.Treent:
                 SelectedCharacter = TreentAvatar;
