@@ -6,31 +6,31 @@ using UnityEngine;
 [System.Serializable]
 public class LikertResponse
 {
-    public string QuestionText;
-    public int Response; 
+    public string questionText;
+    public int response; 
     
     public LikertResponse(){}
 
     public LikertResponse(string questionText, int response)
     {
-        QuestionText = questionText;
-        Response = response;
+        this.questionText = questionText;
+        this.response = response;
     }
 }
 [System.Serializable]
 public class LikertResponses
 {
-    public string UserID;
-    public string Date;
-    public string Time;
-    public List<LikertResponse> Responses;
+    public string userID;
+    public string date;
+    public string time;
+    public List<LikertResponse> responses;
 
     public LikertResponses()
     {
-        UserID = SettingsBase.GetSubjectID();
-        Date = DateTime.Now.ToString("dd/MM/yy");
-        Time = DateTime.Now.ToString("HH:mm");
-        Responses = new List<LikertResponse>();
+        userID = SettingsBase.GetSubjectID();
+        date = DateTime.Now.ToString("dd/MM/yy");
+        time = DateTime.Now.ToString("HH:mm");
+        responses = new List<LikertResponse>();
     }
 }
 
@@ -41,7 +41,7 @@ public class LikertScaleController : MonoBehaviour
     public string questionnaireName;
     
     [SerializeField] private List<LikertQuestion> questions;
-    public LikertResponses Results;
+    public LikertResponses results;
     public List<CanvasGroup> scaleButtons;
     
     [Header("Question Texts")]
@@ -68,7 +68,7 @@ public class LikertScaleController : MonoBehaviour
     
     public void OnEnable()
     {
-        Results = new LikertResponses();
+        results = new LikertResponses();
         LoadQuestionnaire();
         if (questions.Count > 0)
         {
@@ -105,12 +105,12 @@ public class LikertScaleController : MonoBehaviour
                 {
                     //Save response
                     var result = new LikertResponse(questions[_currentQuestion].questionText,_currentOption);
-                    Results.Responses.Add(result);
+                    results.responses.Add(result);
                     
                     _currentQuestion++;
                     if (_currentQuestion >= questions.Count)
                     {
-                        QuestionnaireDataSaver.SaveToJson(Results,questionnaireName);
+                        QuestionnaireDataSaver.SaveToJson(results,questionnaireName);
                         Invoke(nameof(FinishQuestionnaire),0.5f);
                         startQuestionnaire = false;
                         return;

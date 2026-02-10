@@ -1,0 +1,84 @@
+{
+  "Questions": [
+    {
+      "questionText": "Fake - Natural",
+      "negativeText": "Fake",
+      "positiveText": "Natural"
+    },
+    {
+      "questionText": "Machinelike - Humanlike",
+      "negativeText": "Machinelike",
+      "positiveText": "Humanlike"
+    },
+    {
+      "questionText": "Unconscious - Conscious",
+      "negativeText": "Unconscious",
+      "positiveText": "Conscious"
+    },
+    {
+      "questionText": "Artificial - Lifelike",
+      "negativeText": "Artificial",
+      "positiveText": "Lifelike"
+    },
+    {
+      "questionText": "Moving rigidly - Moving elegantly",
+      "negativeText": "Moving rigidly",
+      "positiveText": "Moving elegantly"
+    },
+    {
+      "questionText": "Dead – Alive",
+      "negativeText": "Dead",
+      "positiveText": "Alive"
+    },
+    {
+      "questionText": "Stagnant – Lively",
+      "negativeText": "Stagnant",
+      "positiveText": "Lively"
+    },
+    {
+      "questionText": "Mechanical – Organic",
+      "negativeText": "Mechanical",
+      "positiveText": "Organic"
+    },
+    {
+      "questionText": "Artificial – Lifelike",
+      "negativeText": "Artificial",
+      "positiveText": "Lifelike"
+    },
+    {
+      "questionText": "Inert – Interactive",
+      "negativeText": "Inert",
+      "positiveText": "Interactive"
+    },
+    {
+      "questionText": "Apathetic – Responsive",
+      "negativeText": "Apathetic",
+      "positiveText": "Responsive"
+    },
+    {
+      "questionText": "Dislike – Like",
+      "negativeText": "Dislike",
+      "positiveText": "Like"
+    },
+    {
+      "questionText": "Unfriendly – Friendly",
+      "negativeText": "Unfriendly",
+      "positiveText": "Friendly"
+    },
+    {
+      "questionText": "Unkind – Kind",
+      "negativeText": "Unkind",
+      "positiveText": "Kind"
+    },
+    {
+      "questionText": "Unpleasant – Pleasant",
+      "negativeText": "Unpleasant",
+      "positiveText": "Pleasant"
+    },
+    {
+      "questionText": "Awful - Nice",
+      "negativeText": "Awful",
+      "positiveText": "Nice"
+    }
+  ]
+}
