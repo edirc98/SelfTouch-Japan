@@ -11,7 +11,6 @@ public class MonitoringData
     public string Stage;
     public string Time;
     public float SesionDuration;
-    
 }
 
 public class LogData

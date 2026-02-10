@@ -1,0 +1,34 @@
+{
+  "Questions": [
+    {
+      "questionText": "When I was touching my hand, I felt as if the virtual body was…",
+      "negativeText": "Heavy",
+      "positiveText": "Light"
+    },
+    {
+      "questionText": "When I was touching my hand, I felt as if the virtual body was…",
+      "negativeText": "Stiff",
+      "positiveText": "Soft"
+    },
+    {
+      "questionText": "When I was touching my hand, I felt as if the virtual body was…",
+      "negativeText": "Cold",
+      "positiveText": "Warm"
+    },
+    {
+      "questionText": "When I was touching my hand, I felt as if the virtual body was…",
+      "negativeText": "Wet",
+      "positiveText": "Dry"
+    },
+    {
+      "questionText": "When I was touching my hand, I felt as if the virtual body was…",
+      "negativeText": "Hard",
+      "positiveText": "Soft"
+    },
+    {
+      "questionText": "How confident do you feel about your answers?",
+      "negativeText": "Not confident at all",
+      "positiveText": "Very confident"
+    }
+  ]
+}

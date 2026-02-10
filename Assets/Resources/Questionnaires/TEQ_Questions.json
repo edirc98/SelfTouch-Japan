@@ -1,0 +1,34 @@
+{
+  "Questions": [
+    {
+      "questionText": "I felt like I was tapping my left hand.",
+      "negativeText": "Strongly disagree",
+      "positiveText": "Strongly agree"
+    },
+    {
+      "questionText": "The touch on my left hand matched the movements I made with my right hand.",
+      "negativeText": "Strongly disagree",
+      "positiveText": "Strongly agree"
+    },
+    {
+      "questionText": "I felt as if the virtual body was my body.",
+      "negativeText": "Strongly disagree",
+      "positiveText": "Strongly agree"
+    },
+    {
+      "questionText": "I felt like my left hand was becoming bigger.",
+      "negativeText": "Strongly disagree",
+      "positiveText": "Strongly agree"
+    },
+    {
+      "questionText": "I couldn’t feel my left hand .",
+      "negativeText": "Strongly disagree",
+      "positiveText": "Strongly agree"
+    },
+    {
+      "questionText": "How confident do you feel about your answers?",
+      "negativeText": "Not confident at all",
+      "positiveText": "Very confident"
+    }
+  ]
+}
