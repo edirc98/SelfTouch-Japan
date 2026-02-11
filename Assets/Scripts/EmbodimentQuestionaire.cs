@@ -31,7 +31,7 @@ public class EmbodimentQuestionaire : QuickStageBase
     {
         QuestionStartText.text = "Respond the following question:";
         canRespond = true;
-        if (QuestionsLoop.GetCurrentInteration() == QuestionsLoop._numIterations)
+        if (QuestionsLoop.GetCurrentInteration() == QuestionsLoop.numIterations)
         {
             QuestionsLoop.ResetCurrentIteration(); 
         }

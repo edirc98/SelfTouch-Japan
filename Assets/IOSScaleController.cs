@@ -5,6 +5,35 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class IOSResponse
+{
+    public int trial;
+    public int value;
+
+    public IOSResponse() {}
+    public IOSResponse(int trial, int value)
+    {
+        this.trial = trial;
+        this.value = value;
+    }
+}
+
+[System.Serializable]
+public class IOSResponses
+{
+    public string date;
+    public string time;
+    public List<IOSResponse> responses;
+
+    public IOSResponses()
+    {
+        date = DateTime.Now.ToString("dd/MM/yy");
+        time = DateTime.Now.ToString("HH:mm");
+        responses = new List<IOSResponse>();
+    }
+}
+
 public class IOSScaleController : MonoBehaviour
 {
     [Header("Sliders")]
@@ -17,7 +46,10 @@ public class IOSScaleController : MonoBehaviour
     [SerializeField] private float totalMovingTime = 10.0f;
     [SerializeField] private bool startQuestionnaire = false;
     
+    private IOSResponses _responses;
+    
     private bool _slidersMoving;
+    private bool _changeWay = false; 
     private float _pressTime;
     private bool _isHolding;
     private float _holdTimer;
@@ -30,13 +62,20 @@ public class IOSScaleController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        _slidersMoving = false;
+        _responses = new IOSResponses();
     }
 
     public void OnEnable()
     {
         ResetSliders();
+        startQuestionnaire = true;
         _currentTrial = 0;
+    }
+
+    public void OnDisable()
+    {
+        startQuestionnaire = false;
+        _responses.responses.Clear();
     }
 
     // Update is called once per frame
@@ -57,10 +96,16 @@ public class IOSScaleController : MonoBehaviour
                 _selectionProgress = Mathf.Clamp01(_holdTimer / holdThreshold);
                 if (_selectionProgress >= 1.0f)
                 {
+                    //Save response
+                    var response = new IOSResponse(_currentTrial, (int)selfSlider.value);
+                    _responses.responses.Add(response);
+                    
                     _currentTrial++;
                     if (_currentTrial >= _totalTrials)
                     {
-                        gameObject.SetActive(false);
+                        QuestionnaireDataSaver.SaveToJson(_responses,"IOS_Questionnaire");
+                        Invoke(nameof(FinishQuestionnaire),0.5f);
+                        startQuestionnaire = false;
                         return;
                     }
                     NextTrial();
@@ -99,13 +144,27 @@ public class IOSScaleController : MonoBehaviour
         float range = selfSlider.maxValue - selfSlider.minValue;
         float speed = range / totalMovingTime;
 
-        selfSlider.value += speed * Time.deltaTime;
-        otherSlider.value += speed * Time.deltaTime;
-
-        if (selfSlider.value >= selfSlider.maxValue)
+        if (!_changeWay)
         {
-            selfSlider.value = selfSlider.maxValue;
-            _slidersMoving = false;
+            selfSlider.value += speed * Time.deltaTime;
+            otherSlider.value += speed * Time.deltaTime;
         }
+        else
+        {
+            selfSlider.value -= speed * Time.deltaTime;
+            otherSlider.value -= speed * Time.deltaTime;
+        }
+        
+        if (selfSlider.value >= selfSlider.maxValue || selfSlider.value <= selfSlider.minValue)
+        {
+            _changeWay = !_changeWay;
+            //selfSlider.value = selfSlider.maxValue;
+            //slidersMoving = false;
+        }
+    }
+
+    private void FinishQuestionnaire()
+    {
+        gameObject.SetActive(false);
     }
 }

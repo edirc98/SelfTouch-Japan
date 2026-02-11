@@ -20,14 +20,12 @@ public class LikertResponse
 [System.Serializable]
 public class LikertResponses
 {
-    public string userID;
     public string date;
     public string time;
     public List<LikertResponse> responses;
 
     public LikertResponses()
     {
-        userID = SettingsBase.GetSubjectID();
         date = DateTime.Now.ToString("dd/MM/yy");
         time = DateTime.Now.ToString("HH:mm");
         responses = new List<LikertResponse>();
@@ -64,12 +62,14 @@ public class LikertScaleController : MonoBehaviour
     private int _currentQuestion = 0;
     private float _selectionProgress = 0.0f;
 
-    
-    
-    public void OnEnable()
+    public void Awake()
     {
         results = new LikertResponses();
         LoadQuestionnaire();
+    }
+
+    public void OnEnable()
+    {
         if (questions.Count > 0)
         {
             startQuestionnaire = true;
@@ -82,6 +82,8 @@ public class LikertScaleController : MonoBehaviour
     public void OnDisable()
     {
         startQuestionnaire = false;
+        //questions.Clear();
+        results.responses.Clear();
     }
 
 
@@ -110,6 +112,7 @@ public class LikertScaleController : MonoBehaviour
                     _currentQuestion++;
                     if (_currentQuestion >= questions.Count)
                     {
+                        DeselectButton(_currentOption);
                         QuestionnaireDataSaver.SaveToJson(results,questionnaireName);
                         Invoke(nameof(FinishQuestionnaire),0.5f);
                         startQuestionnaire = false;
@@ -171,6 +174,8 @@ public class LikertScaleController : MonoBehaviour
     {
         _currentOption = 0;
         _currentQuestion = 0;
+        _selectionProgress = 0.0f;
+        _holdTimer = 0.0f;
     }
     
     private void FinishQuestionnaire()
