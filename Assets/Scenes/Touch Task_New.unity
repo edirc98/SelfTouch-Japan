@@ -7867,7 +7867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &594361771
 Transform:
   m_ObjectHideFlags: 0
@@ -11444,6 +11444,7 @@ MonoBehaviour:
   startQuestionnaire: 0
   key: 107
   holdThreshold: 2
+  _currentQuestion: 0
 --- !u!1 &925243146
 GameObject:
   m_ObjectHideFlags: 0
@@ -21852,6 +21853,7 @@ MonoBehaviour:
   startQuestionnaire: 0
   key: 107
   holdThreshold: 2
+  _currentQuestion: 0
 --- !u!4 &1790029087
 Transform:
   m_ObjectHideFlags: 0
@@ -25548,6 +25550,7 @@ MonoBehaviour:
   startQuestionnaire: 0
   key: 107
   holdThreshold: 2
+  _currentQuestion: 0
 --- !u!1 &3930074406263393445
 GameObject:
   m_ObjectHideFlags: 0

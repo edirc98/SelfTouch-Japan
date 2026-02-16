@@ -59,7 +59,7 @@ public class LikertScaleController : MonoBehaviour
     private float _holdTimer;
     
     private int _currentOption = 0;
-    private int _currentQuestion = 0;
+    [SerializeField] private int _currentQuestion = 0;
     private float _selectionProgress = 0.0f;
 
     public void Awake()
@@ -105,17 +105,16 @@ public class LikertScaleController : MonoBehaviour
                 scaleButtons[_currentOption].alpha = Mathf.Lerp(0.3f, 1f, _selectionProgress);
                 if (_selectionProgress >= 1.0f)
                 {
-                    //Save response
-                    var result = new LikertResponse(questions[_currentQuestion].questionText,_currentOption);
-                    results.responses.Add(result);
+                    
+                    SaveQuestion(_currentQuestion,_currentOption);
                     
                     _currentQuestion++;
                     if (_currentQuestion >= questions.Count)
                     {
-                        DeselectButton(_currentOption);
+                        startQuestionnaire = false;
                         QuestionnaireDataSaver.SaveToJson(results,questionnaireName);
                         Invoke(nameof(FinishQuestionnaire),0.5f);
-                        startQuestionnaire = false;
+                        DeselectButton(_currentOption);
                         return;
                     }
                     NextQuestion(_currentQuestion);
@@ -167,7 +166,13 @@ public class LikertScaleController : MonoBehaviour
         
         _currentOption = 0;
         SelectButton(_currentOption);
-        
+    }
+
+    private void SaveQuestion(int question,int option)
+    {
+        //Save response
+        var result = new LikertResponse(questions[question].questionText,option);
+        results.responses.Add(result);
     }
     
     private void ResetQuestionnaire()

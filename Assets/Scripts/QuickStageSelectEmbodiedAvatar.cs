@@ -30,6 +30,8 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
     public StageSetConditionsOrder Conditions;
     [Header("Avatar Offsets")]
     public List<AvatarOffsets> avatarOffsets; 
+    
+    private Monitoring _dataMonitoring;
     private QuickVRManager _vrManager
     {
         get
@@ -37,13 +39,19 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
             return QuickSingletonManager.GetInstance<QuickVRManager>();
         }
     }
-    
+
+    protected override void Start()
+    {
+        _dataMonitoring = QuickSingletonManager.GetInstance<Monitoring>();
+        base.Start();
+    }
+
     protected override IEnumerator CoUpdate()
     {
         int currentIteration = MainLoop.GetCurrentInteration();
         Debug.Log("Current iter: " + currentIteration); 
         switch (Conditions.currentConditions[currentIteration].avatarBodyType)
-        {
+        { 
             case Condition.BodyType.Human:
                 if (SettingsBase.GetGender() == SettingsBase.Genders.Male)
                 {
@@ -55,6 +63,9 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                     RobotAvatar.gameObject.SetActive(false);
                     TreeentAvatar.gameObject.SetActive(false);
                     HumanFemaleAvatar.gameObject.SetActive(false);
+                    
+                    _dataMonitoring.SaveLogData("Iter: " + currentIteration + " Embodied: " + nameof(Condition.BodyType.Human) + " Male");
+                    
                     break;
                 }
                 else
@@ -67,6 +78,10 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                     RobotAvatar.gameObject.SetActive(false);
                     TreeentAvatar.gameObject.SetActive(false);
                     HumanMaleAvatar.gameObject.SetActive(false);
+                    
+                    _dataMonitoring.SaveLogData("Iter: " + currentIteration + " Embodied: " + nameof(Condition.BodyType.Human) + " Female");
+
+                    
                     break;
                 }
             case Condition.BodyType.Robot:
@@ -78,6 +93,10 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 HumanMaleAvatar.gameObject.SetActive(false);
                 HumanFemaleAvatar.gameObject.SetActive(false);
                 TreeentAvatar.gameObject.SetActive(false);
+                
+                _dataMonitoring.SaveLogData("Iter: " + currentIteration + " Embodied: " + nameof(Condition.BodyType.Human));
+
+                
                 break;
             case Condition.BodyType.Treent:
                 SetLeftHandOffset(avatarOffsets[3].LeftHandPosOffset, avatarOffsets[3].LefthHandRotOffset);
@@ -88,6 +107,9 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 HumanMaleAvatar.gameObject.SetActive(false);
                 HumanFemaleAvatar.gameObject.SetActive(false);
                 RobotAvatar.gameObject.SetActive(false);
+                
+                _dataMonitoring.SaveLogData("Iter: " + currentIteration + " Embodied: " + nameof(Condition.BodyType.Human));
+                
                 break;
         }
         return base.CoUpdate();

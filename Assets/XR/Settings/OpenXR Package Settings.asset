@@ -209,11 +209,11 @@ MonoBehaviour:
   m_Name: XrPerformanceSettingsFeature Android
   m_EditorClassIdentifier: 
   m_enabled: 0
-  nameUi: 
-  version: 
-  featureIdInternal: 
-  openxrExtensionStrings: 
-  company: 
+  nameUi: XR Performance Settings
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.extension.performance_settings
+  openxrExtensionStrings: XR_EXT_performance_settings
+  company: Unity
   priority: 0
   required: 0
 --- !u!114 &-4879009610677861202
@@ -855,7 +855,7 @@ MonoBehaviour:
   - {fileID: -5534427670944210777}
   - {fileID: 1832000709753420382}
   - {fileID: 5942666067914895456}
-  - {fileID: -4708191167790743987}
+  - {fileID: 3945630776364518211}
   - {fileID: 4305100679692522085}
   - {fileID: -766656098571840231}
   - {fileID: -7668486236009431687}
@@ -863,7 +863,7 @@ MonoBehaviour:
   - {fileID: -7404689693372265860}
   - {fileID: 8688862169852208005}
   - {fileID: 6240250386620200128}
-  - {fileID: -753249939299021374}
+  - {fileID: -5150899724702513677}
   - {fileID: -1740912955918036261}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1

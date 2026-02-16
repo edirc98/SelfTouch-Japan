@@ -5,18 +5,18 @@ using UnityEngine;
 
 public static class QuestionnaireDataSaver
 {
-    private static readonly string FileDirectory = Application.persistentDataPath + "/Results/";
+    private static string _fileDirectory;
     private static readonly string Extension = "_Results.json";
     
     public static void SaveToJson<T>(T data, string fileName)
     {
-       
-        string path = FileDirectory + fileName +"_" +SettingsBase.GetSubjectID() + Extension;
+        _fileDirectory = Application.persistentDataPath + "/Results/" + SettingsBase.GetSubjectID() + "/";
+        string path = _fileDirectory + fileName + Extension;
         string json = JsonUtility.ToJson(data, true);
 
-        if (!Directory.Exists(FileDirectory))
+        if (!Directory.Exists(_fileDirectory))
         {
-            Directory.CreateDirectory(FileDirectory);
+            Directory.CreateDirectory(_fileDirectory);
         }
         
         if (!File.Exists(path))
