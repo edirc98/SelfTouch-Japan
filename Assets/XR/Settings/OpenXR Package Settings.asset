@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7902c187e6831e04eb4bd3e8d5c2d2c9, type: 3}
   m_Name: QuickMetaQuestTouchProControllerProfile Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: '[QuickVR] Meta Quest Touch Pro Controller Profile'
   version: 0.0.1
   featureIdInternal: com.quickvr.input.metaquestpro
@@ -855,7 +855,7 @@ MonoBehaviour:
   - {fileID: -5534427670944210777}
   - {fileID: 1832000709753420382}
   - {fileID: 5942666067914895456}
-  - {fileID: 3945630776364518211}
+  - {fileID: 7145206096560221402}
   - {fileID: 4305100679692522085}
   - {fileID: -766656098571840231}
   - {fileID: -7668486236009431687}
@@ -863,7 +863,7 @@ MonoBehaviour:
   - {fileID: -7404689693372265860}
   - {fileID: 8688862169852208005}
   - {fileID: 6240250386620200128}
-  - {fileID: -5150899724702513677}
+  - {fileID: -743942677720312557}
   - {fileID: -1740912955918036261}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb763b1b95db0b42a0a87d00f05848c, type: 3}
   m_Name: QuickOculusTouchControllerProfile Android
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: '[QuickVR] Oculus Touch Controller Profile'
   version: 0.0.1
   featureIdInternal: com.quickvr.input.oculustouch

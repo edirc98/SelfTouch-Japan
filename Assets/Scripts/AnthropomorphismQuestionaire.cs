@@ -28,7 +28,7 @@ public class AnthropomorphismQuestionaire : QuickStageBase
         PositiveClueText.text = "Very much so";
         NegativeClueText.text = "Not at all";
         canRespond = true;
-        if (QuestionsLoop.GetCurrentInteration() == QuestionsLoop.numIterations)
+        if (QuestionsLoop.GetCurrentInteration() == QuestionsLoop._numIterations)
         {
             QuestionsLoop.ResetCurrentIteration(); 
         }
