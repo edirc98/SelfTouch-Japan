@@ -129,7 +129,7 @@ public class LikertScaleController : MonoBehaviour
                 if (heldTime < holdThreshold)
                 {
                     //Next Option
-                    DeselectButton(_currentOption);
+                    ResetSelection();
                     _currentOption = (_currentOption + 1) % scaleButtons.Count;
                     SelectButton(_currentOption);
                 }
@@ -159,10 +159,8 @@ public class LikertScaleController : MonoBehaviour
         questionText.text = q.questionText;
         negativeText.text = q.negativeText;
         positiveText.text = q.positiveText;
-        
-        _selectionProgress = 0.0f;
-        _holdTimer = 0.0f;
-        DeselectButton(_currentOption);
+
+        ResetSelection();
         
         _currentOption = 0;
         SelectButton(_currentOption);
@@ -181,6 +179,13 @@ public class LikertScaleController : MonoBehaviour
         _currentQuestion = 0;
         _selectionProgress = 0.0f;
         _holdTimer = 0.0f;
+    }
+
+    private void ResetSelection()
+    {
+        _selectionProgress = 0.0f;
+        _holdTimer = 0.0f;
+        DeselectButton(_currentOption);
     }
     
     private void FinishQuestionnaire()
