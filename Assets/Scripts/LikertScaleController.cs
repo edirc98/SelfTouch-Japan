@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEditor.AddressableAssets.Build.AnalyzeRules;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class LikertResponse
@@ -41,6 +42,9 @@ public class LikertScaleController : MonoBehaviour
     [SerializeField] private List<LikertQuestion> questions;
     public LikertResponses results;
     public List<CanvasGroup> scaleButtons;
+    
+    [Header("Instructions")]
+    public GameObject instructionsGO;
     
     [Header("Question Texts")]
     public TMPro.TMP_Text questionText;
@@ -109,6 +113,11 @@ public class LikertScaleController : MonoBehaviour
                     SaveQuestion(_currentQuestion,_currentOption);
                     
                     _currentQuestion++;
+                    //Show instructions only for the first X questions
+                    if (_currentQuestion > (int)(questions.Count / 5.0f))
+                    {
+                        HideInstructions();
+                    }
                     if (_currentQuestion >= questions.Count)
                     {
                         startQuestionnaire = false;
@@ -179,6 +188,7 @@ public class LikertScaleController : MonoBehaviour
         _currentQuestion = 0;
         _selectionProgress = 0.0f;
         _holdTimer = 0.0f;
+        ShowInstructions();
     }
 
     private void ResetSelection()
@@ -186,6 +196,16 @@ public class LikertScaleController : MonoBehaviour
         _selectionProgress = 0.0f;
         _holdTimer = 0.0f;
         DeselectButton(_currentOption);
+    }
+
+    private void ShowInstructions()
+    {
+        instructionsGO.SetActive(true);
+    }
+
+    public void HideInstructions()
+    {
+        instructionsGO.SetActive(false);   
     }
     
     private void FinishQuestionnaire()
