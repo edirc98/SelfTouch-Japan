@@ -4243,8 +4243,6 @@ Transform:
   - {fileID: 886577356}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!114 &534531058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4468,7 +4466,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549684761}
   m_CullTransparentMesh: 1
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
 --- !u!1 &557449941
 GameObject:
   m_ObjectHideFlags: 0
@@ -13802,30 +13799,11 @@ MonoBehaviour:
   Conditions: {fileID: 557449943}
   avatarOffsets:
   - AvatarName: Male
-<<<<<<< HEAD
-    LeftHandPosOffset: {x: 0, y: 0, z: 0.25}
-=======
     LeftHandPosOffset: {x: 0.074, y: 0.83, z: 0.03}
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
     LefthHandRotOffset: {x: 0, y: 0, z: 7}
     RightHandPosOffset: {x: 0, y: 0, z: 0}
     RightHandRotOffset: {x: 0, y: 0, z: 0}
   - AvatarName: Female
-<<<<<<< HEAD
-    LeftHandPosOffset: {x: 0, y: 0, z: 0.22}
-    LefthHandRotOffset: {x: 0, y: 0, z: 5}
-    RightHandPosOffset: {x: 0.04, y: 0.16, z: -0.14}
-    RightHandRotOffset: {x: 0, y: 0, z: 0}
-  - AvatarName: Robot
-    LeftHandPosOffset: {x: 0, y: 0, z: 0.22}
-    LefthHandRotOffset: {x: 0, y: 0, z: 8}
-    RightHandPosOffset: {x: 0.03, y: 0.175, z: -0.135}
-    RightHandRotOffset: {x: 0, y: 0, z: 0}
-  - AvatarName: Treent
-    LeftHandPosOffset: {x: 0, y: 0, z: 0.22}
-    LefthHandRotOffset: {x: 0, y: 0, z: 5}
-    RightHandPosOffset: {x: 0.04, y: 0.16, z: -0.14}
-=======
     LeftHandPosOffset: {x: 0, y: 0.855, z: 0.03}
     LefthHandRotOffset: {x: 0, y: 0, z: 9}
     RightHandPosOffset: {x: 0, y: 0, z: 0}
@@ -13839,7 +13817,6 @@ MonoBehaviour:
     LeftHandPosOffset: {x: 0, y: 0.83, z: 0.03}
     LefthHandRotOffset: {x: 6, y: 1, z: 9}
     RightHandPosOffset: {x: 0, y: 0, z: 0}
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
     RightHandRotOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2144332153
 GameObject:

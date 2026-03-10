@@ -14,16 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 1920
-    y: 43
-    width: 1920
-    height: 997
+    x: 0
+    y: 43.2
+    width: 1536
+    height: 772.8
   m_ShowMode: 4
-<<<<<<< HEAD
-  m_Title: Inspector
-=======
-  m_Title: Project
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -47,16 +43,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1920
-    height: 947
+    width: 1536
+    height: 722.8
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-<<<<<<< HEAD
-  controlID: 145
-=======
-  controlID: 91
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+  controlID: 178
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -73,19 +65,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1298
+    x: 1099.2
     y: 0
-    width: 622
-    height: 947
-=======
-    x: 1177.6
-    y: 0
-    width: 358.40002
+    width: 436.80005
     height: 722.8
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -108,17 +93,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 474
-    height: 654
+    width: 392.8
+    height: 448.8
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-=======
-    width: 422.4
-    height: 356
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -135,30 +113,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 654
-    width: 1298
-    height: 293
-=======
-    y: 356
-    width: 1177.6
-    height: 366.8
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 16}
+    y: 448.8
+    width: 1099.2
+    height: 274
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 16}
   - {fileID: 21}
   - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -179,8 +151,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1920
-    height: 997
+    width: 1536
+    height: 772.8
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -204,7 +176,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1920
+    width: 1536
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -225,8 +197,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 977
-    width: 1920
+    y: 752.8
+    width: 1536
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -249,21 +221,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1298
-    height: 947
-  m_MinSize: {x: 200, y: 100}
-  m_MaxSize: {x: 16192, y: 16192}
-  vertical: 1
-  controlID: 55
-=======
-    width: 1177.6
+    width: 1099.2
     height: 722.8
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 92
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+  controlID: 133
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -284,21 +247,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1298
-    height: 654
+    width: 1099.2
+    height: 448.8
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 56
-=======
-    width: 1177.6
-    height: 356
-  m_MinSize: {x: 200, y: 50}
-  m_MaxSize: {x: 16192, y: 8096}
-  vertical: 0
-  controlID: 50
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+  controlID: 134
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -315,17 +269,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 474
+    x: 392.8
     y: 0
-    width: 824
-    height: 654
-=======
-    x: 422.4
-    y: 0
-    width: 755.19995
-    height: 356
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    width: 706.39996
+    height: 448.8
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
@@ -358,8 +305,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73.6
-    width: 307
-    height: 464.6
+    width: 391.8
+    height: 427.8
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -390,7 +337,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animation
-    m_Image: {fileID: -8166618308981325432, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -3237396543322336831, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -427,7 +374,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animator
-    m_Image: {fileID: -1673928668082335149, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -531,7 +478,7 @@ MonoBehaviour:
   m_MaxSize: {x: 2048, y: 2048}
   m_TitleContent:
     m_Text: Asset Store
-    m_Image: {fileID: -8693916549880196297, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -7444545952099596278, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -565,21 +512,14 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1920
-    y: 727
-    width: 1297
-    height: 272
-=======
     x: 0
-    y: 429.6
-    width: 1176.6
-    height: 345.8
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    y: 522.4
+    width: 1098.2
+    height: 253
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -601,38 +541,24 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-<<<<<<< HEAD
-    - Assets/Resources/Questionnaires
-=======
-    - Assets/Scripts/ROBOT
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
-  m_StartGridSize: 16
+  m_StartGridSize: 46
   m_LastFolders:
-<<<<<<< HEAD
-  - Assets/Resources/Questionnaires
-=======
-  - Assets/Scripts/ROBOT
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
-  m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\edirc\Documents\Unity Projects Repos\SelfTouch-Japan
+  - Assets/Scripts
+  m_LastFoldersGridSize: 46
+  m_LastProjectPath: C:\Users\Equipo VR\Documents\Unity Projects Repos\SelfTouch-Japan
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-<<<<<<< HEAD
-    m_SelectedIDs: 22430000
-    m_LastClickedID: 17186
-    m_ExpandedIDs: 0000000062410000b6410000ba42000000ca9a3b
-=======
-    m_SelectedIDs: a8bc0100
-    m_LastClickedID: 113832
-    m_ExpandedIDs: 000000004e860000be87000000ca9a3bffffff7f
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    scrollPos: {x: 0, y: 87}
+    m_SelectedIDs: e8920000
+    m_LastClickedID: 37608
+    m_ExpandedIDs: 00000000cc92000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -660,11 +586,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: 0000000062410000
-=======
-    m_ExpandedIDs: 000000004e860000
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    m_ExpandedIDs: 00000000cc92000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -689,8 +611,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 92a80000
+    m_LastClickedInstanceID: 43154
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000b68e0000ba8e0000be8e0000
     m_RenameOverlay:
@@ -717,7 +639,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 16
+    m_GridSize: 46
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 280
 --- !u!114 &17
@@ -736,21 +658,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 3218
-    y: 73
-    width: 621
-    height: 926
-=======
-    x: 1177.6
+    x: 1099.2001
     y: 73.6
-    width: 357.40002
+    width: 435.80005
     height: 701.8
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -768,7 +683,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 393.6001
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -790,21 +705,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1920
-    y: 73
-    width: 473
-    height: 633
-=======
     x: 0
     y: 73.6
-    width: 421.4
-    height: 335
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    width: 391.8
+    height: 427.8
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -818,15 +726,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-      m_SelectedIDs: feeafdff
-      m_LastClickedID: -136450
-      m_ExpandedIDs: 4e3ffdff1042fdff2a6cfdff2c6cfdff546cfdfff06dfdff226efdff366efdff386efdff3a6efdff3c6efdff3e6efdff2e8efdff688efdff928efdffcc8efdfff68efdff308ffdffe494fdff5897fdff8e98fdff469dfdff4a9dfdff7e9efdff2ca5fdff82c6fdff98cafdff48f6fdff54f6fdff5af6fdff64f6fdff86f6fdff8af6fdfffc21fefff4ffffff6e480100ea480100904901002a4a01005e4a0100424b0100744b0100504c01003c4d0100a24d01002a4e0100484e0100a04e0100144f01002a4f01009c4f010092500100
-=======
-      m_SelectedIDs: 1c440000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 02fbffff08700000c070000094730000f475000066770000ee770000
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+      m_ExpandedIDs: a002ffff0820ffff5c20ffffb820fffff823ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -866,21 +768,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 2394
-    y: 73
-    width: 822
-    height: 633
-=======
-    x: 422.4
+    x: 392.80002
     y: 73.6
-    width: 753.19995
-    height: 335
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    width: 704.39996
+    height: 427.8
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -895,7 +790,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -174.40002, y: -26.400024}
+      snapOffset: {x: -174.39996, y: -26.399994}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
@@ -921,7 +816,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 25}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -947,7 +842,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 25}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -1200,15 +1095,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-    m_Target: {x: 0.10610812, y: 1.1926078, z: 1.7399583}
+    m_Target: {x: -0.1342921, y: 0.7834522, z: -0.07371381}
     speed: 2
-    m_Value: {x: 0.032190874, y: 1.2583605, z: 0.751973}
-=======
-    m_Target: {x: 0.4357363, y: 0.79504037, z: 1.4950498}
-    speed: 2
-    m_Value: {x: 0.4357363, y: 0.79504037, z: 1.4950498}
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    m_Value: {x: -0.1342921, y: 0.7834522, z: -0.07371381}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1254,30 +1143,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-<<<<<<< HEAD
-    m_Target: {x: 0.06556791, y: 0.107555814, z: -0.007109011, w: 0.9920102}
+    m_Target: {x: -0.0014227879, y: 0.9404931, z: -0.003949657, w: -0.33990204}
     speed: 2
-    m_Value: {x: 0.06556784, y: 0.1075557, z: -0.0071090036, w: 0.9920091}
+    m_Value: {x: -0.0014227296, y: 0.94045633, z: -0.0039495025, w: -0.33988875}
   m_Size:
-    m_Target: 1.2379671
+    m_Target: 0.27823153
     speed: 2
-    m_Value: 1.1846576
-=======
-    m_Target: {x: 0.13364375, y: 0.14924368, z: -0.020363096, w: 0.9795255}
-    speed: 2
-    m_Value: {x: 0.13364246, y: 0.14924225, z: -0.020362902, w: 0.97951615}
-  m_Size:
-    m_Target: 0.9340795
-    speed: 2
-    m_Value: 0.9340795
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    m_Value: 0.27823153
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.2885999
-    m_SpeedNormalized: 0.13999996
+    m_Speed: 0.069699995
+    m_SpeedNormalized: 0.03
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -1311,21 +1190,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 2429
-    y: 73
-    width: 903
-    height: 632
-=======
-    x: 422.4
+    x: 392.80002
     y: 73.6
-    width: 753.19995
-    height: 477.4
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    width: 704.39996
+    height: 427.8
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1342,11 +1214,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-<<<<<<< HEAD
-  m_TargetSize: {x: 903, y: 611}
-=======
-  m_TargetSize: {x: 941.49994, y: 570.5}
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+  m_TargetSize: {x: 880.49994, y: 508.5}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1361,17 +1229,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-<<<<<<< HEAD
-    m_HBaseRangeMin: -451.5
-    m_HBaseRangeMax: 451.5
-    m_VBaseRangeMin: -305.5
-    m_VBaseRangeMax: 305.5
-=======
-    m_HBaseRangeMin: -376.59998
-    m_HBaseRangeMax: 376.59998
-    m_VBaseRangeMin: -228.2
-    m_VBaseRangeMax: 228.2
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    m_HBaseRangeMin: -352.19998
+    m_HBaseRangeMax: 352.19998
+    m_VBaseRangeMin: -203.40001
+    m_VBaseRangeMax: 203.40001
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1389,40 +1250,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-<<<<<<< HEAD
-      width: 903
-      height: 611
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 451.5, y: 305.5}
-=======
-      width: 753.19995
-      height: 456.4
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 376.59998, y: 228.2}
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+      width: 704.39996
+      height: 406.8
+    m_Scale: {x: 0.99999994, y: 0.99999994}
+    m_Translation: {x: 352.19998, y: 203.4}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-<<<<<<< HEAD
-      x: -451.5
-      y: -305.5
-      width: 903
-      height: 611
+      x: -352.2
+      y: -203.40001
+      width: 704.4
+      height: 406.80002
     m_MinimalGUI: 1
-  m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 903, y: 632}
-=======
-      x: -376.59998
-      y: -228.2
-      width: 753.19995
-      height: 456.4
-    m_MinimalGUI: 1
-  m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 941.49994, y: 596.75}
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+  m_defaultScale: 0.99999994
+  m_LastWindowPixelSize: {x: 880.49994, y: 534.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -1445,21 +1289,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1920
-    y: 726
-    width: 1413
-    height: 273
-=======
     x: 0
-    y: 572
-    width: 1176.6
-    height: 203.4
->>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
+    y: 522.4
+    width: 1098.2
+    height: 253
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
