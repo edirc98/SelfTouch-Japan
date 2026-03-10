@@ -855,7 +855,11 @@ MonoBehaviour:
   - {fileID: -5534427670944210777}
   - {fileID: 1832000709753420382}
   - {fileID: 5942666067914895456}
+<<<<<<< HEAD
   - {fileID: -4708191167790743987}
+=======
+  - {fileID: 6075745524369212832}
+>>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
   - {fileID: 4305100679692522085}
   - {fileID: -766656098571840231}
   - {fileID: -7668486236009431687}
@@ -863,7 +867,11 @@ MonoBehaviour:
   - {fileID: -7404689693372265860}
   - {fileID: 8688862169852208005}
   - {fileID: 6240250386620200128}
+<<<<<<< HEAD
   - {fileID: -753249939299021374}
+=======
+  - {fileID: -2321829794512883824}
+>>>>>>> 5541c5d (Added Touchy dll and modified left hand offsets)
   - {fileID: -1740912955918036261}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
@@ -951,11 +959,11 @@ MonoBehaviour:
   m_Name: MetaQuestTouchPlusControllerProfile Android
   m_EditorClassIdentifier: 
   m_enabled: 0
-  nameUi: 
-  version: 
-  featureIdInternal: 
-  openxrExtensionStrings: 
-  company: 
+  nameUi: Meta Quest Touch Plus Controller Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.metaquestplus
+  openxrExtensionStrings: XR_META_touch_controller_plus
+  company: Unity
   priority: 0
   required: 0
 --- !u!114 &6240250386620200128
