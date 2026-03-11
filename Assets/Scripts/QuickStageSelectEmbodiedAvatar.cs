@@ -5,29 +5,29 @@ using QuickVR;
 
 [System.Serializable]
 public struct AvatarOffsets{
-    public string AvatarName; 
-    public Vector3 LeftHandPosOffset;
-    public Vector3 LefthHandRotOffset;
-    public Vector3 RightHandPosOffset;
-    public Vector3 RightHandRotOffset; 
+    public string avatarName; 
+    public Vector3 leftHandPosOffset;
+    public Vector3 leftHandRotOffset;
+    public Vector3 rightHandPosOffset;
+    public Vector3 rightHandRotOffset; 
 }
 public class QuickStageSelectEmbodiedAvatar: QuickStageBase
 {
     [Header("Avatar Source Animator")]
-    public Animator MasterAvatarAnimator;
-    public Transform MasterAvatarLeftIKTarget; 
-    public Transform MasterAvatarRightIKTarget;
-    //public ObjectFollow RightHandFollower; 
+    public Animator masterAvatarAnimator;
+    public Transform masterAvatarLeftIKTarget; 
+    public Transform masterAvatarRightIKTarget;
+    public HapticTouchMovement rightHandFollower; 
 
     [Header("Target Avatars Animators")]
-    public Animator HumanMaleAvatar;
-    public Animator HumanFemaleAvatar;
-    public Animator RobotAvatar;
-    public Animator TreeentAvatar;
+    public Animator humanMaleAvatar;
+    public Animator humanFemaleAvatar;
+    public Animator robotAvatar;
+    public Animator treeentAvatar;
 
     [Header("Loop & Conditions")]
-    public QuickStageLoop MainLoop;
-    public StageSetConditionsOrder Conditions;
+    public QuickStageLoop mainLoop;
+    public StageSetConditionsOrder conditions;
     [Header("Avatar Offsets")]
     public List<AvatarOffsets> avatarOffsets; 
     
@@ -48,21 +48,21 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
 
     protected override IEnumerator CoUpdate()
     {
-        int currentIteration = MainLoop.GetCurrentInteration();
+        int currentIteration = mainLoop.GetCurrentInteration();
         Debug.Log("Current iter: " + currentIteration); 
-        switch (Conditions.currentConditions[currentIteration].avatarBodyType)
+        switch (conditions.currentConditions[currentIteration].avatarBodyType)
         { 
             case Condition.BodyType.Human:
                 if (SettingsBase.GetGender() == SettingsBase.Genders.Male)
                 {
-                    SetLeftHandOffset(avatarOffsets[0].LeftHandPosOffset, avatarOffsets[0].LefthHandRotOffset); 
-                    SetRightHandOffset(avatarOffsets[0].RightHandPosOffset, avatarOffsets[0].RightHandRotOffset); 
+                    SetLeftHandOffset(avatarOffsets[0].leftHandPosOffset, avatarOffsets[0].leftHandRotOffset); 
+                    SetRightHandOffset(avatarOffsets[0].rightHandPosOffset); 
 
-                    HumanMaleAvatar.gameObject.SetActive(true);
-                    _vrManager.SetAnimatorTarget(HumanMaleAvatar);
-                    RobotAvatar.gameObject.SetActive(false);
-                    TreeentAvatar.gameObject.SetActive(false);
-                    HumanFemaleAvatar.gameObject.SetActive(false);
+                    humanMaleAvatar.gameObject.SetActive(true);
+                    _vrManager.SetAnimatorTarget(humanMaleAvatar);
+                    robotAvatar.gameObject.SetActive(false);
+                    treeentAvatar.gameObject.SetActive(false);
+                    humanFemaleAvatar.gameObject.SetActive(false);
                     
                     _dataMonitoring.SaveLogData("Iter: " + currentIteration + " Embodied: " + nameof(Condition.BodyType.Human) + " Male");
                     
@@ -70,14 +70,14 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 }
                 else
                 {
-                    SetLeftHandOffset(avatarOffsets[1].LeftHandPosOffset, avatarOffsets[1].LefthHandRotOffset);
-                    SetRightHandOffset(avatarOffsets[1].RightHandPosOffset, avatarOffsets[1].RightHandRotOffset);
+                    SetLeftHandOffset(avatarOffsets[1].leftHandPosOffset, avatarOffsets[1].leftHandRotOffset);
+                    SetRightHandOffset(avatarOffsets[1].rightHandPosOffset);
 
-                    HumanFemaleAvatar.gameObject.SetActive(true);
-                    _vrManager.SetAnimatorTarget(HumanFemaleAvatar);
-                    RobotAvatar.gameObject.SetActive(false);
-                    TreeentAvatar.gameObject.SetActive(false);
-                    HumanMaleAvatar.gameObject.SetActive(false);
+                    humanFemaleAvatar.gameObject.SetActive(true);
+                    _vrManager.SetAnimatorTarget(humanFemaleAvatar);
+                    robotAvatar.gameObject.SetActive(false);
+                    treeentAvatar.gameObject.SetActive(false);
+                    humanMaleAvatar.gameObject.SetActive(false);
                     
                     _dataMonitoring.SaveLogData("Iter: " + currentIteration + " Embodied: " + nameof(Condition.BodyType.Human) + " Female");
 
@@ -85,28 +85,28 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                     break;
                 }
             case Condition.BodyType.Robot:
-                SetLeftHandOffset(avatarOffsets[2].LeftHandPosOffset, avatarOffsets[2].LefthHandRotOffset);
-                SetRightHandOffset(avatarOffsets[2].RightHandPosOffset, avatarOffsets[2].RightHandRotOffset);
+                SetLeftHandOffset(avatarOffsets[2].leftHandPosOffset, avatarOffsets[2].leftHandRotOffset);
+                SetRightHandOffset(avatarOffsets[2].rightHandPosOffset);
 
-                RobotAvatar.gameObject.SetActive(true);
-                _vrManager.SetAnimatorTarget(RobotAvatar);
-                HumanMaleAvatar.gameObject.SetActive(false);
-                HumanFemaleAvatar.gameObject.SetActive(false);
-                TreeentAvatar.gameObject.SetActive(false);
+                robotAvatar.gameObject.SetActive(true);
+                _vrManager.SetAnimatorTarget(robotAvatar);
+                humanMaleAvatar.gameObject.SetActive(false);
+                humanFemaleAvatar.gameObject.SetActive(false);
+                treeentAvatar.gameObject.SetActive(false);
                 
                 _dataMonitoring.SaveLogData("Iter: " + currentIteration + " Embodied: " + nameof(Condition.BodyType.Human));
 
                 
                 break;
             case Condition.BodyType.Treent:
-                SetLeftHandOffset(avatarOffsets[3].LeftHandPosOffset, avatarOffsets[3].LefthHandRotOffset);
-                SetRightHandOffset(avatarOffsets[3].RightHandPosOffset, avatarOffsets[3].RightHandRotOffset);
+                SetLeftHandOffset(avatarOffsets[3].leftHandPosOffset, avatarOffsets[3].leftHandRotOffset);
+                SetRightHandOffset(avatarOffsets[3].rightHandPosOffset);
 
-                TreeentAvatar.gameObject.SetActive(true);
-                _vrManager.SetAnimatorTarget(TreeentAvatar);
-                HumanMaleAvatar.gameObject.SetActive(false);
-                HumanFemaleAvatar.gameObject.SetActive(false);
-                RobotAvatar.gameObject.SetActive(false);
+                treeentAvatar.gameObject.SetActive(true);
+                _vrManager.SetAnimatorTarget(treeentAvatar);
+                humanMaleAvatar.gameObject.SetActive(false);
+                humanFemaleAvatar.gameObject.SetActive(false);
+                robotAvatar.gameObject.SetActive(false);
                 
                 _dataMonitoring.SaveLogData("Iter: " + currentIteration + " Embodied: " + nameof(Condition.BodyType.Human));
                 
@@ -116,15 +116,14 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
     }
 
 
-    private void SetLeftHandOffset(Vector3 PosOffset, Vector3 RotOffset)
+    private void SetLeftHandOffset(Vector3 posOffset, Vector3 rotOffset)
     {
-        MasterAvatarLeftIKTarget.transform.position = PosOffset;
-        MasterAvatarLeftIKTarget.transform.eulerAngles = RotOffset; 
+        masterAvatarLeftIKTarget.transform.position = posOffset;
+        masterAvatarLeftIKTarget.transform.eulerAngles = rotOffset; 
     }
 
-    private void SetRightHandOffset(Vector3 PosOffset, Vector3 RotOffset)
+    private void SetRightHandOffset(Vector3 posOffset)
     {
-        //RightHandFollower.SetPositionOffset(PosOffset);
-        //RightHandFollower.SetRotationOffset(RotOffset); 
+        rightHandFollower.SetPositionOffset(posOffset);
     }
 }
