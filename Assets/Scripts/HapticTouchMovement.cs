@@ -8,7 +8,7 @@ public class HapticTouchMovement : Haptic
     public Transform objectFollower;
     public Vector3 positionOffset;
     
-    private bool Follow {set;get;}
+    public bool Follow {set;get;}
 
     
     protected override void StylusButtonEvent(StylusButtonEventType e)
