@@ -71,8 +71,12 @@ Material:
     - _InnerGlow: 0.2
     - _Metallic: 0
     - _Mode: 0
+    - _NoiseScale: 3
+    - _NoiseSpeed: 0.1
+    - _NoiseStrength: 2
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ProceduralTiling: 3
     - _PulseSpeed: 1
     - _PulseStrength: 0.01
     - _RimPower: 5
@@ -84,6 +88,9 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _VoronoiScale: 2
+    - _VoronoiSharpness: 1
+    - _VoronoiStrength: 1
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 0.5411765, b: 0.5803922, a: 1}

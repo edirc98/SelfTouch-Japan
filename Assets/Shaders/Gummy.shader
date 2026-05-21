@@ -29,6 +29,17 @@ Shader "Custom/Gummy"
         // --- Vertex Pulse (squish) ---
         _PulseSpeed     ("Pulse Speed",          Range(0, 5)) = 1.0
         _PulseStrength  ("Pulse Strength",       Range(0, 0.05)) = 0.01
+        
+        // --- Procedural Texture ---
+        _NoiseScale        ("Noise Scale",           Range(0.1, 10))  = 2.0
+        _NoiseStrength     ("Noise Normal Strength", Range(0, 2))     = 0.4
+        _NoiseSpeed        ("Noise Animation Speed", Range(0, 2))     = 0.3
+
+        _VoronoiScale      ("Voronoi Scale",         Range(0.1, 20))  = 5.0
+        _VoronoiStrength   ("Voronoi Depth",         Range(0, 1))     = 0.15
+        _VoronoiSharpness  ("Voronoi Sharpness",     Range(1, 8))     = 3.0
+
+        _ProceduralTiling  ("Procedural Tiling",     Range(0.1, 5))   = 1.0
     }
 
     SubShader
@@ -39,7 +50,7 @@ Shader "Custom/Gummy"
         CGPROGRAM
 
         // Surface shader con lighting custom
-        #pragma surface surf GummySpecular vertex:vert fullforwardshadows
+        #pragma surface surf GummySpecular vertex:vert fullforwardshadows nolightmap
         #pragma target 3.0
 
         #include "UnityCG.cginc"
@@ -67,6 +78,14 @@ Shader "Custom/Gummy"
 
         half      _PulseSpeed;
         half      _PulseStrength;
+
+        half _NoiseScale;
+        half _NoiseStrength;
+        half _NoiseSpeed;
+        half _VoronoiScale;
+        half _VoronoiStrength;
+        half _VoronoiSharpness;
+        half _ProceduralTiling;
 
         // ─────────────────────────────────────────
         // STRUCTS
@@ -131,6 +150,103 @@ Shader "Custom/Gummy"
             return c;
         }
 
+
+        // ─────────────────────────────────────────
+        // PROCEDURAL HELPERS
+        // ─────────────────────────────────────────
+
+        // Hash sin trigonometría — rápido en GPU
+        float2 hash2(float2 p)
+        {
+            p = float2(dot(p, float2(127.1, 311.7)),
+                       dot(p, float2(269.5, 183.3)));
+            return frac(sin(p) * 43758.5453);
+        }
+
+        // Voronoi (distancia a celda más cercana)
+        // Devuelve: x = distancia al punto, y = distancia al borde
+        float2 voronoi(float2 uv)
+        {
+            float2 cell  = floor(uv);
+            float2 local = frac(uv);
+
+            float  minDist  = 8.0;
+            float  minDist2 = 8.0;
+
+            for (int y = -1; y <= 1; y++)
+            for (int x = -1; x <= 1; x++)
+            {
+                float2 neighbor = float2(x, y);
+                float2 pointanim = hash2(cell + neighbor);
+                // Anima los puntos Voronoi en el tiempo → superficie "viva"
+                pointanim = 0.5 + 0.5 * sin(_Time.y * _NoiseSpeed + 6.2831 * pointanim);
+
+                float2 diff = neighbor + pointanim - local;
+                float  d    = dot(diff, diff); // distancia al cuadrado (más barato)
+
+                if (d < minDist)
+                {
+                    minDist2 = minDist;
+                    minDist  = d;
+                }
+                else if (d < minDist2)
+                {
+                    minDist2 = d;
+                }
+            }
+
+            return float2(sqrt(minDist), sqrt(minDist2));
+        }
+
+        // Perlin Noise 2D — smooth interpolation con gradientes
+        float perlinNoise(float2 uv)
+        {
+            float2 cell  = floor(uv);
+            float2 local = frac(uv);
+
+            // Smoothstep cúbico (C2 continuo → gradientes suaves)
+            float2 u = local * local * (3.0 - 2.0 * local);
+
+            float a = dot(hash2(cell + float2(0,0)) * 2 - 1, local - float2(0,0));
+            float b = dot(hash2(cell + float2(1,0)) * 2 - 1, local - float2(1,0));
+            float c = dot(hash2(cell + float2(0,1)) * 2 - 1, local - float2(0,1));
+            float d = dot(hash2(cell + float2(1,1)) * 2 - 1, local - float2(1,1));
+
+            return lerp(lerp(a, b, u.x),
+                        lerp(c, d, u.x), u.y) * 0.5 + 0.5; // normalizado [0,1]
+        }
+
+        // Construye normal tangente a partir de un heightmap procedural
+        // Usa diferencias finitas: muestra el noise en ±epsilon y calcula gradiente
+        float3 proceduralNormal(float2 uv, float strength)
+        {
+            float eps = 0.01; // aumentado — con 0.005 la diferencia era casi imperceptible
+
+            float2 animUV = uv + _Time.y * _NoiseSpeed * 0.1;
+
+            float hC = perlinNoise(animUV * _NoiseScale);
+            float hR = perlinNoise((animUV + float2(eps, 0))   * _NoiseScale);
+            float hU = perlinNoise((animUV + float2(0,   eps)) * _NoiseScale);
+
+            float2 vC = voronoi(animUV * _VoronoiScale);
+            float2 vR = voronoi((animUV + float2(eps, 0))   * _VoronoiScale);
+            float2 vU = voronoi((animUV + float2(0,   eps)) * _VoronoiScale);
+
+            float voronoiEdge  = pow(saturate(vC.y - vC.x), _VoronoiSharpness);
+            float voronoiEdgeR = pow(saturate(vR.y - vR.x), _VoronoiSharpness);
+            float voronoiEdgeU = pow(saturate(vU.y - vU.x), _VoronoiSharpness);
+
+            // Gradiente: diferencia entre muestra desplazada y centro
+            // Signo corregido para tangent space de Unity (X→right, Y→up)
+            float dX = (hR + voronoiEdgeR * _VoronoiStrength)
+                      - (hC + voronoiEdge  * _VoronoiStrength);
+            float dY = (hU + voronoiEdgeU * _VoronoiStrength)
+                      - (hC + voronoiEdge  * _VoronoiStrength);
+
+            // Devuelve XY del desplazamiento; Z se reconstruye en surf()
+            return float3(dX, dY, 1.0);
+        }
+        
         // ─────────────────────────────────────────
         // VERTEX FUNCTION — Pulse suave
         // ─────────────────────────────────────────
@@ -149,26 +265,31 @@ Shader "Custom/Gummy"
         // ─────────────────────────────────────────
         void surf(Input IN, inout SurfaceOutputGummy o)
         {
-            // Base color
             fixed4 tex  = tex2D(_MainTex, IN.uv_MainTex);
             fixed4 base = tex * _Color;
             o.Albedo    = base.rgb;
             o.Alpha     = base.a;
 
-            // Specular y gloss
             o.Specular  = _SpecColor.rgb * _Glossiness;
             o.Gloss     = _Glossiness;
 
-            // Fresnel → rim visible desde superficie
-            half fresnel    = 1.0 - saturate(dot(normalize(IN.viewDir),
+            half fresnel = 1.0 - saturate(dot(normalize(IN.viewDir),
                                                   WorldNormalVector(IN, o.Normal)));
             half fresnelTerm = pow(fresnel, _RimPower);
+            o.Emission       = _InnerGlowColor.rgb * _InnerGlow * fresnelTerm;
 
-            // Inner glow: emissión interna que simula luz atrapada
-            // (como un globo traslúcido con luz dentro)
-            o.Emission  = _InnerGlowColor.rgb * _InnerGlow * fresnelTerm;
+            // ── PROCEDURAL NORMAL ──────────────────────────────────────────────
+            float2 proceduralUV = IN.uv_MainTex * _ProceduralTiling;
+            float3 proceduralN  = proceduralNormal(proceduralUV, _NoiseStrength);
 
-            // Pasamos datos al lighting function
+            // Built-In Surface Shader espera la normal en tangent space normalizada.
+            // XY son el desplazamiento tangencial, Z es la profundidad (nunca 0).
+            // Sin saturar Z el normalize puede producir NaN si _NoiseStrength es muy alto.
+            float2 tN  = proceduralN.xy * _NoiseStrength;
+            float  tNz = sqrt(max(0.001, 1.0 - dot(tN, tN))); // Z reconstruida correctamente
+            o.Normal   = float3(tN, tNz);                      // ya normalizado por construcción
+            // ──────────────────────────────────────────────────────────────────
+
             o.RimColor    = _RimColor.rgb;
             o.RimStrength = _RimStrength;
             o.SSSColor    = _SSSColor.rgb;
