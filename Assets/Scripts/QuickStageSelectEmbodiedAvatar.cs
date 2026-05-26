@@ -29,6 +29,7 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
 
     [Header("Loop & Conditions")]
     public QuickStageLoop mainLoop;
+    public QuickStageLoop touchloop;
     public StageSetConditionsOrder conditions;
     [Header("Avatar Offsets")]
     public List<AvatarOffsets> avatarOffsets; 
@@ -118,6 +119,7 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 
                 break;
         }
+        touchloop.ResetCurrentIteration();
         return base.CoUpdate();
     }
 

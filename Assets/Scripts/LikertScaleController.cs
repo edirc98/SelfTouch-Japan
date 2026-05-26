@@ -76,17 +76,21 @@ public class LikertScaleController : MonoBehaviour
     {
         if (questions.Count > 0)
         {
-            startQuestionnaire = true;
+            
             ResetQuestionnaire();
+            ResetSelection();
             NextQuestion(_currentQuestion);
             SelectButton(_currentOption);
+            startQuestionnaire = true;
+            _isHolding = false; 
         }
     }
 
     public void OnDisable()
     {
         startQuestionnaire = false;
-        //questions.Clear();
+        _isHolding = false;
+        ResetQuestionnaire();
         results.responses.Clear();
     }
 

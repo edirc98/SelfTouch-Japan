@@ -9,7 +9,8 @@ public class HapticTouchMovement : Haptic
     private const string TipName    = "Tip";
     private const string TargetName = "Target";
     
-    public Transform objectFollower;
+    public GameObject objectFollower;
+    public GameObject testTarget;
     public Vector3 CalibrationOffset { get; private set; }
     public bool    IsCalibrated      { get; private set; }
     
@@ -48,12 +49,13 @@ public class HapticTouchMovement : Haptic
 
     private void FollowCursor()
     {
-        objectFollower.position = cursor.transform.position + CalibrationOffset;
+        testTarget.transform.position = cursor.transform.position + CalibrationOffset;
+        objectFollower.transform.position = cursor.transform.position + CalibrationOffset;
     }
 
     public void Calibrate(Transform avatarRoot)
     {
-        CalibrationOffset = Vector3.zero;
+        //CalibrationOffset = Vector3.zero;
         tip    = ChildFinder.FindChild(avatarRoot, TipName);
         target = ChildFinder.FindChild(avatarRoot, TargetName);
 
@@ -64,7 +66,7 @@ public class HapticTouchMovement : Haptic
         }
         else
         {
-            CalibrationOffset = target.position - tip.position;
+            CalibrationOffset = target.TransformPoint(target.localPosition) - tip.TransformPoint(tip.localPosition);
             IsCalibrated      = true; 
         }
         
