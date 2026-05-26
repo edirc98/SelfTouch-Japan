@@ -17,7 +17,9 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
     public Animator masterAvatarAnimator;
     public Transform masterAvatarLeftIKTarget; 
     public Transform masterAvatarRightIKTarget;
-    public HapticTouchMovement rightHandFollower; 
+    public HapticTouchMovement rightHandFollower;
+
+    public Transform CurrentAvatarTransform; 
 
     [Header("Target Avatars Animators")]
     public Animator humanMaleAvatar;
@@ -56,9 +58,10 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 if (SettingsBase.GetGender() == SettingsBase.Genders.Male)
                 {
                     SetLeftHandOffset(avatarOffsets[0].leftHandPosOffset, avatarOffsets[0].leftHandRotOffset); 
-                    SetRightHandOffset(avatarOffsets[0].rightHandPosOffset); 
+                    //SetRightHandOffset(avatarOffsets[0].rightHandPosOffset); 
 
                     humanMaleAvatar.gameObject.SetActive(true);
+                    CurrentAvatarTransform = humanMaleAvatar.transform;
                     _vrManager.SetAnimatorTarget(humanMaleAvatar);
                     robotAvatar.gameObject.SetActive(false);
                     treeentAvatar.gameObject.SetActive(false);
@@ -71,9 +74,10 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 else
                 {
                     SetLeftHandOffset(avatarOffsets[1].leftHandPosOffset, avatarOffsets[1].leftHandRotOffset);
-                    SetRightHandOffset(avatarOffsets[1].rightHandPosOffset);
+                    //SetRightHandOffset(avatarOffsets[1].rightHandPosOffset);
 
                     humanFemaleAvatar.gameObject.SetActive(true);
+                    CurrentAvatarTransform = humanFemaleAvatar.transform;
                     _vrManager.SetAnimatorTarget(humanFemaleAvatar);
                     robotAvatar.gameObject.SetActive(false);
                     treeentAvatar.gameObject.SetActive(false);
@@ -86,9 +90,10 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 }
             case Condition.BodyType.Robot:
                 SetLeftHandOffset(avatarOffsets[2].leftHandPosOffset, avatarOffsets[2].leftHandRotOffset);
-                SetRightHandOffset(avatarOffsets[2].rightHandPosOffset);
+                //SetRightHandOffset(avatarOffsets[2].rightHandPosOffset);
 
                 robotAvatar.gameObject.SetActive(true);
+                CurrentAvatarTransform = robotAvatar.transform;
                 _vrManager.SetAnimatorTarget(robotAvatar);
                 humanMaleAvatar.gameObject.SetActive(false);
                 humanFemaleAvatar.gameObject.SetActive(false);
@@ -100,9 +105,10 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
                 break;
             case Condition.BodyType.Treent:
                 SetLeftHandOffset(avatarOffsets[3].leftHandPosOffset, avatarOffsets[3].leftHandRotOffset);
-                SetRightHandOffset(avatarOffsets[3].rightHandPosOffset);
+                //SetRightHandOffset(avatarOffsets[3].rightHandPosOffset);
 
                 treeentAvatar.gameObject.SetActive(true);
+                CurrentAvatarTransform = treeentAvatar.transform;
                 _vrManager.SetAnimatorTarget(treeentAvatar);
                 humanMaleAvatar.gameObject.SetActive(false);
                 humanFemaleAvatar.gameObject.SetActive(false);
@@ -124,6 +130,6 @@ public class QuickStageSelectEmbodiedAvatar: QuickStageBase
 
     private void SetRightHandOffset(Vector3 posOffset)
     {
-        rightHandFollower.SetPositionOffset(posOffset);
+        //rightHandFollower.SetPositionOffset(posOffset);
     }
 }

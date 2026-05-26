@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 
 public abstract class Haptic : MonoBehaviour
 {
-
     public enum StylusButtonEventType
     {
         Grey_Up,

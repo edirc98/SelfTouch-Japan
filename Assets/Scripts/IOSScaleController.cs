@@ -67,7 +67,7 @@ public class IOSScaleController : MonoBehaviour
 
     public void OnEnable()
     {
-        ResetSliders();
+        ResetSliders(0);
         startQuestionnaire = true;
         _currentTrial = 0;
     }
@@ -109,7 +109,12 @@ public class IOSScaleController : MonoBehaviour
                         return;
                     }
                     NextTrial();
-                    ResetSliders();
+                    if (_currentTrial < _totalTrials / 2)
+                    {
+                        ResetSliders(0);
+                    }
+                    else {ResetSliders(1);}
+                    
                     _isHolding = false;
                 }
             }
@@ -127,10 +132,19 @@ public class IOSScaleController : MonoBehaviour
         }
     }
 
-    private void ResetSliders()
+    private void ResetSliders(int startPos)
     {
-        selfSlider.value = 0.0f;
-        otherSlider.value = 0.0f;   
+        if (startPos == 0)
+        {
+            selfSlider.value = 0.0f;
+            otherSlider.value = 0.0f;
+        }
+        else if (startPos == 1)
+        {
+            selfSlider.value = selfSlider.maxValue;
+            otherSlider.value = otherSlider.maxValue;
+        }
+          
     }
     private void NextTrial()
     {
