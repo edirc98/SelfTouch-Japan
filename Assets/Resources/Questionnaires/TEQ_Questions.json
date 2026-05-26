@@ -1,14 +1,14 @@
 {
   "Questions": [
     {
-      "questionText": "I felt like I was tapping my left hand.",
-      "negativeText": "Strongly disagree",
-      "positiveText": "Strongly agree"
+      "questionText": "Rate the force of the touch sensation you applied with your right hand (0 no force, 6 as much as possible)",
+      "negativeText": "No force",
+      "positiveText": "As much as possible"
     },
     {
-      "questionText": "The touch on my left hand matched the movements I made with my right hand.",
-      "negativeText": "Strongly disagree",
-      "positiveText": "Strongly agree"
+      "questionText": "I felt I was touching…",
+      "negativeText": "My hand",
+      "positiveText": "Something else"
     },
     {
       "questionText": "I felt as if the virtual body was my body.",
@@ -16,14 +16,14 @@
       "positiveText": "Strongly agree"
     },
     {
-      "questionText": "I felt like my left hand was becoming bigger.",
-      "negativeText": "Strongly disagree",
-      "positiveText": "Strongly agree"
+      "questionText": "I felt as though the touch I felt on my left hand was caused by the stick touching the\nvirtual hand",
+      "negativeText": "Not at all",
+      "positiveText": "Very much so"
     },
     {
-      "questionText": "I couldn’t feel my left hand .",
-      "negativeText": "Strongly disagree",
-      "positiveText": "Strongly agree"
+      "questionText": "I felt as if the virtual body was my body.",
+      "negativeText": "Not at all",
+      "positiveText": "Very much so"
     },
     {
       "questionText": "How confident do you feel about your answers?",
