@@ -39,6 +39,11 @@ public class IOSScaleController : MonoBehaviour
     [Header("Sliders")]
     [SerializeField] private Slider selfSlider;
     [SerializeField] private Slider otherSlider;
+    [SerializeField] private Slider progressSlider;
+
+    [Header("Circle Texts")] 
+    [SerializeField] private TMPro.TMP_Text selfText; 
+    [SerializeField] private TMPro.TMP_Text otherText;
     
     [Header("Selection Control")]
     [SerializeField] private KeyCode key = KeyCode.K;
@@ -70,6 +75,8 @@ public class IOSScaleController : MonoBehaviour
         ResetSliders(0);
         startQuestionnaire = true;
         _currentTrial = 0;
+        _isHolding = false;
+        _holdTimer = 0.0f; 
     }
 
     public void OnDisable()
@@ -88,12 +95,13 @@ public class IOSScaleController : MonoBehaviour
                 _pressTime = Time.time;
                 _isHolding = true;
             }
-
             if (_isHolding)
             {
                 _holdTimer += Time.deltaTime;
+                
 
                 _selectionProgress = Mathf.Clamp01(_holdTimer / holdThreshold);
+                UpdateProgressSlider(_selectionProgress);
                 if (_selectionProgress >= 1.0f)
                 {
                     //Save response
@@ -115,17 +123,20 @@ public class IOSScaleController : MonoBehaviour
                     }
                     else {ResetSliders(1);}
                     
-                    _isHolding = false;
                 }
             }
             
             if (Input.GetKeyUp(key) && _isHolding)
             {
                 float heldTime = Time.time - _pressTime;
+                _selectionProgress = 0.0f;
+                _holdTimer = 0.0f;
                 _isHolding = false;
                 if (heldTime < holdThreshold)
                 {
                     _slidersMoving = !_slidersMoving;
+                    _selectionProgress = 0.0f; 
+                    UpdateProgressSlider(_selectionProgress);
                 }
             }
             if(_slidersMoving) MoveSliders();
@@ -144,13 +155,22 @@ public class IOSScaleController : MonoBehaviour
             selfSlider.value = selfSlider.maxValue;
             otherSlider.value = otherSlider.maxValue;
         }
-          
+
+        progressSlider.value = 0.0f; 
+        _selectionProgress = 0.0f; 
+
+
     }
     private void NextTrial()
     {
         _slidersMoving = false;
         _selectionProgress = 0.0f;
         _holdTimer = 0.0f;
+        if (_currentTrial != 0)
+        {
+            selfText.text = "Self \n (My Body)";
+            otherText.text = "Other \n (My Avatar)";
+        }
     }
 
     private void MoveSliders()
@@ -175,6 +195,11 @@ public class IOSScaleController : MonoBehaviour
             //selfSlider.value = selfSlider.maxValue;
             //slidersMoving = false;
         }
+    }
+
+    private void UpdateProgressSlider(float value)
+    {
+        progressSlider.value = value;
     }
 
     private void FinishQuestionnaire()

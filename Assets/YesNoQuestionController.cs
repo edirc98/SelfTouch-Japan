@@ -204,6 +204,7 @@ public class YesNoQuestionController : MonoBehaviour
     private void NoResponse()
     {
         //Touch Loop finishes
+		loop.numIterations = 3;
         loop.FinishLoop();
     }
 }

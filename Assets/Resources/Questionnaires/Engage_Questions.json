@@ -1,9 +1,9 @@
 {
   "Questions": [
     {
-      "questionText": "Would you like to do continue for 2 more trials?",
-      "negativeText": "No force",
-      "positiveText": "As much as possible"
+      "questionText": "Would you like to do continue one more trial?",
+      "negativeText": "",
+      "positiveText": ""
     }
   ]
 }

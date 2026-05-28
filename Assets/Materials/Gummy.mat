@@ -72,13 +72,13 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NoiseScale: 3
-    - _NoiseSpeed: 0.1
-    - _NoiseStrength: 2
+    - _NoiseSpeed: 0.25
+    - _NoiseStrength: 1.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _ProceduralTiling: 3
-    - _PulseSpeed: 1
-    - _PulseStrength: 0.01
+    - _PulseSpeed: 0.5
+    - _PulseStrength: 0.001
     - _RimPower: 5
     - _RimStrength: 0.3
     - _SSSPower: 4
@@ -88,15 +88,15 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _VoronoiScale: 2
+    - _VoronoiScale: 4
     - _VoronoiSharpness: 1
-    - _VoronoiStrength: 1
+    - _VoronoiStrength: 0.5
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.5411765, b: 0.5803922, a: 1}
+    - _Color: {r: 0.5838536, g: 0.5411765, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _InnerGlowColor: {r: 1, g: 0.7372549, b: 0.6862745, a: 1}
-    - _RimColor: {r: 1, g: 0.70771456, b: 0.5113207, a: 1}
-    - _SSSColor: {r: 1, g: 0.6861342, b: 0, a: 1}
-    - _SpecColor: {r: 1, g: 0.9471622, b: 0.53396225, a: 1}
+    - _InnerGlowColor: {r: 0, g: 0.21242404, b: 1, a: 1}
+    - _RimColor: {r: 0, g: 0.5360688, b: 0.8396226, a: 1}
+    - _SSSColor: {r: 0, g: 1, b: 0.5665407, a: 1}
+    - _SpecColor: {r: 0.21226418, g: 0.7124685, b: 1, a: 1}
   m_BuildTextureStacks: []

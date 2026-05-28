@@ -1518,7 +1518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35204309}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6527888, y: -0.03181, z: 0.06880724, w: -0.7537377}
+  m_LocalRotation: {x: -0.6527888, y: 0.03181, z: -0.06880724, w: 0.7537377}
   m_LocalPosition: {x: -0.28138617, y: -0.000000009313213, z: -0.000000005587938}
   m_LocalScale: {x: 0.9999999, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2275,7 +2275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &144081367
 Transform:
   m_ObjectHideFlags: 0
@@ -2723,7 +2723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249506311}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.015157988, y: -0.09786543, z: 0.37022603, w: 0.9236478}
+  m_LocalRotation: {x: -0.015157988, y: 0.09786543, z: -0.37022603, w: -0.9236478}
   m_LocalPosition: {x: -0.25348952, y: 0.000000014901144, z: -0.00000007078056}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3166,8 +3166,8 @@ Transform:
   m_GameObject: {fileID: 307536361}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.454, y: -10.140001, z: 0.36399996}
-  m_LocalScale: {x: 0.046666667, y: 20, z: 0.14}
+  m_LocalPosition: {x: 0.016, y: -10.140001, z: 0.36399996}
+  m_LocalScale: {x: 0.9844819, y: 20, z: 0.14}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 651484432}
@@ -4604,7 +4604,7 @@ MonoBehaviour:
   _instructionsTimePause: 0.5
   _guiList: []
   currentConditions:
-  - avatarBodyType: 0
+  - avatarBodyType: 2
     conditionTouchType: 1
   - avatarBodyType: 2
     conditionTouchType: 1
@@ -5175,7 +5175,6 @@ Transform:
   m_LocalScale: {x: 1.5, y: 0.05, z: 0.80533934}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1162296703}
   - {fileID: 307536362}
   - {fileID: 298089492}
   - {fileID: 1419953551}
@@ -5976,7 +5975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 724193643}
-  - component: {fileID: 724193644}
+  - component: {fileID: 724193645}
   m_Layer: 0
   m_Name: Stage_ENG
   m_TagString: Untagged
@@ -5999,7 +5998,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 140841470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &724193644
+--- !u!114 &724193645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6008,7 +6007,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 724193642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc4f00c3ec420994fbac36589b502050, type: 3}
+  m_Script: {fileID: 11500000, guid: 96314d32ef951d346bf1fad046559d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxTimeOut: 0
@@ -6021,6 +6020,7 @@ MonoBehaviour:
   _instructionsTimePause: 0.5
   _guiList: []
   questionnaireGo: {fileID: 1800711869}
+  loop: {fileID: 140841471}
 --- !u!1 &724737853
 GameObject:
   m_ObjectHideFlags: 0
@@ -8134,89 +8134,6 @@ MonoBehaviour:
   _instructionsVolume: 1
   _instructionsTimePause: 0.5
   _guiList: []
---- !u!1 &1162296702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1162296703}
-  - component: {fileID: 1162296705}
-  - component: {fileID: 1162296704}
-  m_Layer: 0
-  m_Name: Leg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &1162296703
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162296702}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46333334, y: -10.14, z: 0.36399996}
-  m_LocalScale: {x: 0.046666667, y: 20, z: 0.14}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 651484432}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1162296704
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162296702}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: be11e9bd57985d64fa93f494680568cc, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1162296705
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162296702}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1218190817
 GameObject:
   m_ObjectHideFlags: 0
@@ -12745,7 +12662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1833991298
 Transform:
   m_ObjectHideFlags: 0
@@ -14508,7 +14425,7 @@ MonoBehaviour:
     rightHandPosOffset: {x: 0.055, y: 0.16, z: -0.09}
     rightHandRotOffset: {x: 0, y: 0, z: 0}
   - avatarName: Robot
-    leftHandPosOffset: {x: 0, y: 0.83, z: 0.03}
+    leftHandPosOffset: {x: 0, y: 0.85, z: 0.03}
     leftHandRotOffset: {x: 6, y: 1, z: 9}
     rightHandPosOffset: {x: 0.06, y: 0.16, z: -0.115}
     rightHandRotOffset: {x: 0, y: 0, z: 0}

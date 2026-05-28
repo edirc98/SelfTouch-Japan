@@ -254,10 +254,10 @@ Shader "Custom/Gummy"
         {
             // Desplazamiento sinusoidal a lo largo de la normal
             // Da sensación de que el personaje "respira" o es blando
-            /*
+            
             float pulse = sin(_Time.y * _PulseSpeed) * _PulseStrength;
             v.vertex.xyz += v.normal * pulse;
-            */
+            
         }
 
         // ─────────────────────────────────────────
