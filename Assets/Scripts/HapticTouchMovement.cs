@@ -10,7 +10,6 @@ public class HapticTouchMovement : Haptic
     private const string TargetName = "Target";
     
     public GameObject objectFollower;
-    public GameObject testTarget;
     public Vector3 CalibrationOffset { get; private set; }
     public bool    IsCalibrated      { get; private set; }
     
@@ -49,7 +48,6 @@ public class HapticTouchMovement : Haptic
 
     private void FollowCursor()
     {
-        testTarget.transform.position = cursor.transform.position + CalibrationOffset;
         objectFollower.transform.position = cursor.transform.position + CalibrationOffset;
     }
 

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _settingsBase:
   - _key: SubjectID
-    _value: TestID
+    _value: 1
     _type: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     _visibleInMenu: 1
     _order: 0
   - _key: Gender
-    _value: Male
+    _value: Female
     _type: SettingsBase+Genders, QuickBase, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     _visibleInMenu: 1
     _order: 0

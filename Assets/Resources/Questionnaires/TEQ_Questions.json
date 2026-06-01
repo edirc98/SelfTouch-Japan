@@ -6,21 +6,6 @@
       "positiveText": "As much as possible"
     },
     {
-      "questionText": "I felt I was touching…",
-      "negativeText": "My hand",
-      "positiveText": "Something else"
-    },
-    {
-      "questionText": "I felt as if the virtual body was my body.",
-      "negativeText": "Strongly disagree",
-      "positiveText": "Strongly agree"
-    },
-    {
-      "questionText": "I felt as though the touch I felt on my left hand was caused by the stick touching the virtual hand",
-      "negativeText": "Not at all",
-      "positiveText": "Very much so"
-    },
-    {
       "questionText": "I felt as if the virtual body was my body.",
       "negativeText": "Not at all",
       "positiveText": "Very much so"

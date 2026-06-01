@@ -1,6 +1,16 @@
 {
   "Questions": [
     {
+      "questionText": "I felt as though the touch I felt on my left hand was caused by the pen touching my virtual hand",
+      "negativeText": "Not at all",
+      "positiveText": "Very much so"
+    },
+    {
+      "questionText": "I felt I was controlling the movement of the virtual pen.",
+      "negativeText": "Not at all",
+      "positiveText": "Very much so"
+    },
+    {
       "questionText": "During the touch, my left hand felt… \n Soft - Hard",
       "negativeText": "Soft",
       "positiveText": "Hard"
