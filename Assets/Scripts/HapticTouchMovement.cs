@@ -18,6 +18,9 @@ public class HapticTouchMovement : Haptic
 
     [SerializeField] private Transform tip;
     [SerializeField] private Transform target;
+
+    private Vector3 CalibratedPos;
+    private Vector3 calibrationVector; 
     
     public bool Follow {set;get;}
 
@@ -53,7 +56,7 @@ public class HapticTouchMovement : Haptic
 
     public void Calibrate(Transform avatarRoot)
     {
-        //CalibrationOffset = Vector3.zero;
+        CalibrationOffset = Vector3.zero;
         tip    = ChildFinder.FindChild(avatarRoot, TipName);
         target = ChildFinder.FindChild(avatarRoot, TargetName);
 
@@ -64,8 +67,16 @@ public class HapticTouchMovement : Haptic
         }
         else
         {
-            CalibrationOffset = target.TransformPoint(target.localPosition) - tip.TransformPoint(tip.localPosition);
-            IsCalibrated      = true; 
+            
+            Vector3 mainOffset = target.position - cursor.transform.position;
+            IsCalibrated      = true;
+
+            Vector3 tipOffset = objectFollower.transform.position - tip.position;
+            
+            
+            CalibrationOffset = mainOffset + tipOffset;
+            CalibratedPos = cursor.transform.position + CalibrationOffset;
+            
         }
         
 
@@ -78,7 +89,15 @@ public class HapticTouchMovement : Haptic
         {
             Gizmos.color = Color.magenta;
             Gizmos.DrawLine(tip.position, target.position);
+
+            Gizmos.color = Color.yellow; 
+            Gizmos.DrawWireSphere(cursor.transform.position, 0.05f);
+            
+            Gizmos.DrawLine(cursor.transform.position, CalibratedPos);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(CalibratedPos, 0.05f);
         }
         
     }
 }
+
