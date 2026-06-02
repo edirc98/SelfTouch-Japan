@@ -117,11 +117,7 @@ public class IOSScaleController : MonoBehaviour
                         return;
                     }
                     NextTrial();
-                    if (_currentTrial < _totalTrials / 2)
-                    {
-                        ResetSliders(0);
-                    }
-                    else {ResetSliders(1);}
+                    ResetSliders(_currentTrial);
                     
                 }
             }
@@ -143,14 +139,14 @@ public class IOSScaleController : MonoBehaviour
         }
     }
 
-    private void ResetSliders(int startPos)
+    private void ResetSliders(int currentTrial)
     {
-        if (startPos == 0)
+        if (currentTrial % 2 == 0) // 0 and 2
         {
             selfSlider.value = 0.0f;
             otherSlider.value = 0.0f;
         }
-        else if (startPos == 1)
+        else // 1 and 3
         {
             selfSlider.value = selfSlider.maxValue;
             otherSlider.value = otherSlider.maxValue;
@@ -166,7 +162,7 @@ public class IOSScaleController : MonoBehaviour
         _slidersMoving = false;
         _selectionProgress = 0.0f;
         _holdTimer = 0.0f;
-        if (_currentTrial != 0)
+        if (_currentTrial >= _totalTrials / 2)
         {
             selfText.text = "Self \n (My Body)";
             otherText.text = "Other \n (My Avatar)";

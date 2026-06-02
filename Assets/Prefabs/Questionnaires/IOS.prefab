@@ -840,7 +840,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Please select the distance between the circles that best descirbes your
-    relationship with the avatar you just had. \n\nYou will do this task 4 times. "
+    relationship with the avatar you just had. \n\nYou will do this task 2 times. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

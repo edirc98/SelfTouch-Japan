@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SocialDistanceTask.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Touch Task.unity
     guid: b8989931b572f3245b5600a7698ded5c
+  - enabled: 1
+    path: Assets/Scenes/Touch Task_New.unity
+    guid: 31e8e9ff617f2de408b8bad243081460
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8ae41a5da9f61e54ea49facebed6e999, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: c8916883c4e138245b0114b13b97ce4a, type: 2}

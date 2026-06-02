@@ -78,8 +78,6 @@ public class HapticTouchMovement : Haptic
             CalibratedPos = cursor.transform.position + CalibrationOffset;
             
         }
-        
-
         Debug.Log($"[AvatarCalibrator] Calibrated. Offset: {CalibrationOffset}");
     }
 
